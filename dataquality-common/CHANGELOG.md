@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-19066): Fix jackson-databind issues
 
 ## [8.0.7] - 2020-12-10
 
