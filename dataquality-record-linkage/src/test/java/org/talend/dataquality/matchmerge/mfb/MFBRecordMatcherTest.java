@@ -155,4 +155,47 @@ public class MFBRecordMatcherTest {
         MatchResult matchingResult = mfbRecordMatcher.getMatchingWeight(record1, record2);
         Assert.assertEquals("1.0", String.valueOf(matchingResult.getScores().get(0).score)); //$NON-NLS-1$
     }
+
+    @Test
+    public void testMdmGoldenRecord() {
+        // init record
+        Record record1 = new Record(null, 0, StringUtils.EMPTY);
+        Attribute attribute = new Attribute("1"); //$NON-NLS-1$
+        attribute.setValue("Mugaa"); //$NON-NLS-1$
+        record1.getAttributes().add(attribute);
+        Record record2 = new Record(null, 0, StringUtils.EMPTY);
+        attribute = new Attribute("2"); //$NON-NLS-1$
+        attribute.setValue("Muggaa"); //$NON-NLS-1$
+        record2.getAttributes().add(attribute);
+        Record record3 = new Record(null, 0, StringUtils.EMPTY);
+        attribute = new Attribute("3"); //$NON-NLS-1$
+        attribute.setValue("Muggyab"); //$NON-NLS-1$
+        record3.getAttributes().add(attribute);
+
+        // init Attribute matcher
+        IAttributeMatcher[] attributeMatchers = new IAttributeMatcher[] {
+                MFBAttributeMatcher.wrap(new JaroMatcher(), 1.0, 0.8, SubString.NO_SUBSTRING) };
+
+        MFBRecordMatcher mfbRecordMatcher12 = new MFBRecordMatcher(0.85d);
+        mfbRecordMatcher12.setRecordSize(1);
+        Assert.assertTrue("setAttributeMatchers fail", mfbRecordMatcher12.setAttributeMatchers(attributeMatchers)); //$NON-NLS-1$
+        MatchResult matchingResult12 = mfbRecordMatcher12.getMatchingWeight(record1, record2);
+//        Assert.assertEquals("1.0", String.valueOf(matchingResult12.getScores().get(0).score)); //$NON-NLS-1$
+        System.out.println("matchingResult12.score = "+matchingResult12.getScores().get(0).score);
+    
+        MFBRecordMatcher mfbRecordMatcher23 = new MFBRecordMatcher(0.85d);
+        mfbRecordMatcher23.setRecordSize(1);
+        Assert.assertTrue("setAttributeMatchers fail", mfbRecordMatcher23.setAttributeMatchers(attributeMatchers)); //$NON-NLS-1$
+        MatchResult matchingResult23 = mfbRecordMatcher23.getMatchingWeight(record2, record3);
+//        Assert.assertEquals("1.0", String.valueOf(matchingResult23.getScores().get(0).score)); //$NON-NLS-1$
+        System.out.println("matchingResult23.score = "+matchingResult23.getScores().get(0).score);
+
+        MFBRecordMatcher mfbRecordMatcher13 = new MFBRecordMatcher(0.85d);
+        mfbRecordMatcher13.setRecordSize(1);
+        Assert.assertTrue("setAttributeMatchers fail", mfbRecordMatcher13.setAttributeMatchers(attributeMatchers)); //$NON-NLS-1$        
+        MatchResult matchingResult13 = mfbRecordMatcher13.getMatchingWeight(record1, record3);
+//        Assert.assertEquals("1.0", String.valueOf(matchingResult13.getScores().get(0).score)); //$NON-NLS-1$
+        System.out.println("matchingResult13.score = "+matchingResult13.getScores().get(0).score);
+
+    }
 }
