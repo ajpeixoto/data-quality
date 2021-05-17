@@ -18,70 +18,51 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Supplier;
 
 import org.talend.dataquality.common.exception.DQCommonRuntimeException;
 
 /**
- * A {@link List} that can resize to a given maximum size and ensure that all index in list have an instance of
- * <i>T</i>. <b>Important:</b>type <i>T</i> must have a public zero args constructor.
+ * A {@link List} that can increase its size to ensure that all index in list have an instance of <i>T</i>.
+ * It relies on a {@link Supplier} to create new instances when increasing its size.
  * 
- * @param <T> A class with a zero-arg constructor.
+ * @param <T> the type of list's elements.
  * @see #resize(int)
  */
 public class ResizableList<T> implements List<T>, Serializable {
 
     private static final long serialVersionUID = -4643753633617225999L;
 
-    private Class<T> itemClass;
+    private final Supplier<T> supplier;
 
-    private List<T> innerList;
+    private final List<T> innerList;
 
     /**
      * Creates a list with explicit {@link #resize(int) resize} that contains instances of <i>T</i>.
      * 
-     * @param itemClass The class of <i>T</i>.
-     * @throws IllegalArgumentException If <code>itemClass</code> does not have a zero args constructor.
+     * @param supplier the {@link Supplier} object that creates new instances of type <i>T</i>.
      */
-    public ResizableList(Class<T> itemClass) {
-        try {
-            itemClass.getConstructor();
-        } catch (NoSuchMethodException e) {
-            throw new IllegalArgumentException("Item class must have a zero arg constructor.", e); //$NON-NLS-1$
-        }
-        this.itemClass = itemClass;
-        this.innerList = new ArrayList<T>();
-    }
-
-    /**
-     * Creates a list with a copy of list.
-     * 
-     * @param copyOfList list to be initialized.
-     */
-    public ResizableList(List<T> copyOfList) {
-        this.innerList = copyOfList;
+    public ResizableList(Supplier<T> supplier) {
+        this.supplier = supplier;
+        this.innerList = new ArrayList<>();
     }
 
     /**
      * Resize the list so it contains <code>size</code> instances of <i>T</i>. Method only scales up, never down.
      * 
      * @param size The new size for the list. Must be a positive number.
-     * @return <code>true</code> if new elements were added to the list (i.e. list was resized), <code>false</code> if
-     * no new elements were added.
+     * @return {@code true} if new elements were added to the list (i.e. the list was resized), {@code false} otherwise.
      */
     public boolean resize(int size) {
-        try {
-            if (size < 0) {
-                throw new IllegalArgumentException("Size must be a positive number.");
-            }
-            final int missing = size - innerList.size();
-            boolean addedMissing = missing > 0;
-            for (int i = 0; i < missing; i++) {
-                innerList.add(itemClass.newInstance());
-            }
-            return addedMissing;
-        } catch (Exception e) {
-            throw new DQCommonRuntimeException("Unable to resize list of items.", e);
+        if (size < 0) {
+            throw new DQCommonRuntimeException("Unable to resize list of items: Size must be a positive number.");
         }
+        final int missing = size - innerList.size();
+        boolean addedMissing = missing > 0;
+        for (int i = 0; i < missing; i++) {
+            innerList.add(supplier.get());
+        }
+        return addedMissing;
     }
 
     @Override

@@ -10,6 +10,7 @@ N/A
 ### Changed
 - chore(TPRUN-514): Refactor AvroUtils for Discovery processor
 - chore(TPRUN-979): Refactor AvroUtils for Validation processor
+- chore(TPRUN-952): Refactor ResizableList
 ### Removed
 N/A
 ### Deprecated
