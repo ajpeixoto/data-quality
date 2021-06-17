@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+- fix(TDQ-19484): tMatchGroup Multi Pass matching inconsistencies
 ### Security
 - fix(TDQ-19311): Fix Apache Commons IO issues (to 2.8.0)
 
