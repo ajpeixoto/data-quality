@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- fix(TUP-32162): Remove all the nl plugins for Talend translations
 ### Removed
 N/A
 ### Deprecated
