@@ -43,22 +43,26 @@ public class CombinedRecordMatcher extends AbstractRecordMatcher {
      */
     @Override
     public double getMatchingWeight(String[] record1, String[] record2) {
-        double matchingWeight = 0;
+        IRecordMatcher lastPositiveMatcherHistoricalHigh = null;
+        double matchingWeightHistoricalHigh = 0;
+
         for (IRecordMatcher matcher : matchers) {
             double currentWeight = matcher.getMatchingWeight(record1, record2);
-            if (currentWeight < matchingWeight) {
-                continue; // a better match already exists
-            }
-            // store last matcher
-            lastPositiveMatcher = matcher;
-            matchingWeight = currentWeight;
 
-            if (matchingWeight >= matcher.getRecordMatchThreshold()) {
+            if (currentWeight >= matchingWeightHistoricalHigh) {
+                lastPositiveMatcherHistoricalHigh = matcher;
+                matchingWeightHistoricalHigh = currentWeight;
+            }
+
+            if (currentWeight >= matcher.getRecordMatchThreshold()) {
+                lastPositiveMatcher = matcher; // store last matcher
                 // when there is a match with one matcher, no need to loop on all matchers
-                return matchingWeight;
+                return currentWeight;
             }
         }
-        return matchingWeight;
+
+        lastPositiveMatcher = lastPositiveMatcherHistoricalHigh; // store last matcher
+        return matchingWeightHistoricalHigh;
     }
 
     /**
