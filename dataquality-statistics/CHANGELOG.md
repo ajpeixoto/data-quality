@@ -17,6 +17,7 @@ N/A
 N/A
 ### Security
 - fix(TDQ-19311): Fix Apache Commons IO issues (to 2.8.0)
+- fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
 
 ## [9.0.0] - 2021-06-02
 ### Changed
