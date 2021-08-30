@@ -23,6 +23,7 @@ N/A
 ## [8.0.13] - 2021-06-10
 ### Security
 - fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0)
+- fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
 
 ## [8.0.11] - 2021-04-15
 

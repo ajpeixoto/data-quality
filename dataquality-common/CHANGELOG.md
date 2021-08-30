@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
 
 ## [8.0.14] - 2021-08-12
 
