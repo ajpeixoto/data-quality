@@ -4,19 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
-### Changed
-N/A
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
+## [8.0.15] - 2021-09-16
 ### Security
-- fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
+- fix([TDQ-19616](https://jira.talendforge.org/browse/TDQ-19616)): Fix Apache Commons Compress issue (to 1.21)
 
 ## [8.0.14] - 2021-08-12
 
