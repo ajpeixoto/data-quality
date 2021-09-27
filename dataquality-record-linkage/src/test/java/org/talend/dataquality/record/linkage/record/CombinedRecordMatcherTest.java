@@ -312,8 +312,8 @@ public class CombinedRecordMatcherTest {
 
     @Test
     public void testCreateMatcherString() {
-        IRecordMatcher recordMatcher = RecordMatcherFactory.createMatcher("Simple VSR Matcher"); //$NON-NLS-1$
-        assertNotNull("Simple VSR Matcher not created!", recordMatcher);
+        IRecordMatcher recordMatcher = RecordMatcherFactory.createMatcher("Simple VSR"); //$NON-NLS-1$
+        assertNotNull("Simple VSR not created!", recordMatcher);
     }
 
     @Test
@@ -321,7 +321,7 @@ public class CombinedRecordMatcherTest {
         IAttributeMatcher attMatcher1 = AttributeMatcherFactory.createMatcher("EXACT"); //$NON-NLS-1$
         IAttributeMatcher attMatcher2 = AttributeMatcherFactory.createMatcher("EXACT"); //$NON-NLS-1$
 
-        IRecordMatcher recordMatcher = RecordMatcherFactory.createMatcher("Simple VSR Matcher"); //$NON-NLS-1$
+        IRecordMatcher recordMatcher = RecordMatcherFactory.createMatcher("Simple VSR"); //$NON-NLS-1$
 
         IAttributeMatcher[] attrMatchers = new IAttributeMatcher[] { attMatcher1, attMatcher2 };
         assertFalse("record size is not set. It's not allowed to set the attribute matchers", //$NON-NLS-1$
@@ -354,7 +354,7 @@ public class CombinedRecordMatcherTest {
         assertEquals("EMAIL: 1.0 | NAME: 1.0", recordMatcher.getLabeledAttributeMatchWeights()); //$NON-NLS-1$
 
         CombinedRecordMatcher combMatcher = RecordMatcherFactory.createCombinedRecordMatcher();
-        IRecordMatcher recordMatcher2 = RecordMatcherFactory.createMatcher("Simple VSR Matcher"); //$NON-NLS-1$
+        IRecordMatcher recordMatcher2 = RecordMatcherFactory.createMatcher("Simple VSR"); //$NON-NLS-1$
         recordMatcher2.setRecordSize(2);
         recordMatcher2.setAttributeMatchers(attrMatchers);
         combMatcher.add(recordMatcher);

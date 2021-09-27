@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 N/A
 ### Changed
 - fix(TUP-32162): Remove all the nl plugins for Talend translations
+- fix(TDQ-19770): Unify algorithm name in Match analysis
 ### Removed
 N/A
 ### Deprecated

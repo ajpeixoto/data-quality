@@ -46,8 +46,8 @@ public class RecordMatcherTypeTest {
      */
     @Test
     public void testGetLabel() {
-        assertEquals("Simple VSR Matcher", RecordMatcherType.simpleVSRMatcher.getLabel()); //$NON-NLS-1$
-        assertEquals("t-swoosh", RecordMatcherType.T_SwooshAlgorithm.getLabel()); //$NON-NLS-1$
+        assertEquals("Simple VSR", RecordMatcherType.simpleVSRMatcher.getLabel()); //$NON-NLS-1$
+        assertEquals("T-Swoosh", RecordMatcherType.T_SwooshAlgorithm.getLabel()); //$NON-NLS-1$
     }
 
 }
