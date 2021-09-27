@@ -16,6 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
+- fix(TDQ-19718): Fix Protocol Buffers [Core] issues (to 3.4.0)
 - fix(TDQ-19719): Fix XStream Core issues (to 1.4.18)
 
 ## [9.0.0] - 2021-06-02
