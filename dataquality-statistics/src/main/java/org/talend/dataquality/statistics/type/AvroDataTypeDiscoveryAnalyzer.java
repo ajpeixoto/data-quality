@@ -64,9 +64,12 @@ public class AvroDataTypeDiscoveryAnalyzer implements AvroAnalyzer {
             "{\"type\": \"record\"," + "\"name\": \"discovery_metadata\", \"namespace\": \"org.talend.dataquality\","
                     + "\"fields\":[{ \"type\":\"string\", \"name\":\"dataType\"}]}";
 
+    /**
+     * We treat dates and timestamps as DATE type (cf DateFormat.txt), while the TIME type is not used for now.
+     * Therefore, LogicalTypes.timeMillis() and LogicalTypes.timeMicros() should not be included in the list.
+     */
     private static final List<LogicalType> DATE_RELATED_LOGICAL_TYPES =
-            Arrays.asList(LogicalTypes.date(), LogicalTypes.timeMillis(), LogicalTypes.timeMicros(),
-                    LogicalTypes.timestampMillis(), LogicalTypes.timestampMicros());
+            Arrays.asList(LogicalTypes.date(), LogicalTypes.timestampMillis(), LogicalTypes.timestampMicros());
 
     public static final Schema DATA_TYPE_DISCOVERY_VALUE_LEVEL_SCHEMA =
             new Schema.Parser().parse(DATA_TYPE_DISCOVERY_VALUE_LEVEL_SCHEMA_JSON);
@@ -219,8 +222,8 @@ public class AvroDataTypeDiscoveryAnalyzer implements AvroAnalyzer {
 
         if (value != null) {
             type = getNativeDataType(value, itemSchema);
-            if ((DataTypeEnum.STRING.equals(type) && isDate(value.toString(), frequentDatePatterns.get(itemId)))
-                    || isLogicalDate(itemSchema))
+            if (isLogicalDate(itemSchema)
+                    || (DataTypeEnum.STRING.equals(type) && isDate(value.toString(), frequentDatePatterns.get(itemId))))
                 type = DataTypeEnum.DATE;
         } else {
             type = DataTypeEnum.NULL;

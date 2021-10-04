@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+- bug(TPRUN-2142): Discard Time related logical types
 ### Security
 - fix(TDQ-19311): Fix Apache Commons IO issues (to 2.8.0)
 - fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
