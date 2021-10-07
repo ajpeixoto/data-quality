@@ -264,7 +264,7 @@ public class ReleaseVersionBumper {
     }
 
     private String addHref(String line) {
-        return line.replaceAll("T[A-Z]{2}-\\d{3,5}", "[$0](https://jira.talendforge.org/browse/$0)");
+        return line.replaceAll("T[A-Z]{2,4}-\\d{1,5}", "[$0](https://jira.talendforge.org/browse/$0)");
     }
 
     private void writeDate(DataOutputStream writer) throws IOException {
@@ -338,7 +338,7 @@ public class ReleaseVersionBumper {
             System.out.println("Updating: " + changelogPath.toString()); // NOSONAR
             List<String> lines = Files.readAllLines(changelogPath);
             // If releasing, put the version and the date in the changelog
-            Pattern pattern = Pattern.compile("[\\( ]T..\\-\\d{1,5}[\\) ]");
+            Pattern pattern = Pattern.compile("[( ]T[A-Z]{2,4}-\\d{1,5}[) ]");
             for (int i = 0; i < lines.size(); i++) {
                 String line = lines.get(i);
                 Matcher matcher = pattern.matcher(line);
