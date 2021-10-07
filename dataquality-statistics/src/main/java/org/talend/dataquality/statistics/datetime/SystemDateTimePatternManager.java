@@ -122,20 +122,23 @@ public class SystemDateTimePatternManager {
             buildWordsToLocales(AM_PM, new HashSet<>(Arrays.asList(dfs.getAmPmStrings())), locale);
             buildWordsToLocales(ERAS, new HashSet<>(Arrays.asList(dfs.getEras())), locale);
 
-            final Set<String> zoneStringSet = new HashSet<>();
-            for (String[] zoneStrings : dfs.getZoneStrings()) {
-                zoneStringSet.add(zoneStrings[2]); // short name of zone in standard time
-                zoneStringSet.add(zoneStrings[4]); // short name of zone in daylight saving time
+            try {
+                final Set<String> zoneStringSet = new HashSet<>();
+                for (String[] zoneStrings : dfs.getZoneStrings()) {
+                    zoneStringSet.add(zoneStrings[2]); // short name of zone in standard time
+                    zoneStringSet.add(zoneStrings[4]); // short name of zone in daylight saving time
+                }
+                buildWordsToLocales(TIMEZONES, zoneStringSet, locale);
+            } catch (Exception e) {
+                LOGGER.error("Error while loading languages dates words", e);
             }
-            buildWordsToLocales(TIMEZONES, zoneStringSet, locale);
         }
     }
 
     private static void loadErasInNonIsoChronologies() {
         // load ERAs in Japanese chronology
         final Set<String> japaneseEraSet = Arrays
-                .asList(JapaneseEra.values())
-                .stream() //
+                .stream(JapaneseEra.values()) //
                 .map(e -> e.getDisplayName(TextStyle.FULL, Locale.JAPANESE)) //
                 .collect(Collectors.toSet());
         buildWordsToLocales(ERAS, japaneseEraSet, Locale.JAPANESE);

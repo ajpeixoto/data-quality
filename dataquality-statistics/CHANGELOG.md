@@ -15,6 +15,7 @@ N/A
 N/A
 ### Fixed
 - bug(TPRUN-2142): Discard Time related logical types
+- bug(TPRUN-2200): Avoid crashing when a Locale is not supported in discovery
 ### Security
 - fix(TDQ-19311): Fix Apache Commons IO issues (to 2.8.0)
 - fix(TDQ-19616): Fix Apache Commons Compress issue (to 1.21)
