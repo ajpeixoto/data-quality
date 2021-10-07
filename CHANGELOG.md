@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.0.1] - 2021-10-07
+### Changed
+- fix([TUP-32162](https://jira.talendforge.org/browse/TUP-32162)): Remove all the nl plugins for Talend translations [dataquality-record-linkage]
+- fix([TDQ-19770](https://jira.talendforge.org/browse/TDQ-19770)): Unify algorithm name in Match analysis [dataquality-record-linkage]
+- fix([TUP-32162](https://jira.talendforge.org/browse/TUP-32162)): Remove all the nl plugins for Talend translations [dataquality-standardization]
+### Fixed
+- fix([TDQ-19484](https://jira.talendforge.org/browse/TDQ-19484)): tMatchGroup Multi Pass matching inconsistencies [dataquality-record-linkage]
+- bug(TPRUN-2142): Discard Time related logical types [dataquality-statistics]
+- bug(TPRUN-2200): Avoid crashing when a Locale is not supported in discovery [dataquality-statistics]
+### Security
+- fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0) [dataquality-common]
+- fix([TDQ-19616](https://jira.talendforge.org/browse/TDQ-19616)): Fix Apache Commons Compress issue (to 1.21) [dataquality-common]
+- fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0) [dataquality-record-linkage]
+- fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0) [dataquality-standardization]
+- fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0) [dataquality-statistics]
+- fix([TDQ-19616](https://jira.talendforge.org/browse/TDQ-19616)): Fix Apache Commons Compress issue (to 1.21) [dataquality-statistics]
+- fix([TDQ-19718](https://jira.talendforge.org/browse/TDQ-19718)): Fix Protocol Buffers [Core] issues (to 3.4.0) [dataquality-survivorship]
+- fix([TDQ-19719](https://jira.talendforge.org/browse/TDQ-19719)): Fix XStream Core issues (to 1.4.18) [dataquality-survivorship]
+
 ## [Unreleased]
 ### Added
 N/A

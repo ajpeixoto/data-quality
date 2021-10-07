@@ -4,20 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
+## [9.0.1] - 2021-10-07
 ### Changed
-- fix(TUP-32162): Remove all the nl plugins for Talend translations
-- fix(TDQ-19770): Unify algorithm name in Match analysis
-### Removed
-N/A
-### Deprecated
-N/A
+- fix([TUP-32162](https://jira.talendforge.org/browse/TUP-32162)): Remove all the nl plugins for Talend translations
+- fix([TDQ-19770](https://jira.talendforge.org/browse/TDQ-19770)): Unify algorithm name in Match analysis
 ### Fixed
-- fix(TDQ-19484): tMatchGroup Multi Pass matching inconsistencies
+- fix([TDQ-19484](https://jira.talendforge.org/browse/TDQ-19484)): tMatchGroup Multi Pass matching inconsistencies
 ### Security
-- fix(TDQ-19311): Fix Apache Commons IO issues (to 2.8.0)
+- fix([TDQ-19311](https://jira.talendforge.org/browse/TDQ-19311)): Fix Apache Commons IO issues (to 2.8.0)
 
 ## [9.0.0] - 2021-06-02
 ### Added
