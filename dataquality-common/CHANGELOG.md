@@ -4,19 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
-### Changed
-N/A
-### Removed
-N/A
-### Deprecated
-N/A
+## [9.0.2] - 2021-10-14
 ### Fixed
-fix(TPRUN-2248): Keep field-level properties when cleaning an Avro schema
-### Security
-N/A
+fix([TPRUN-2248](https://jira.talendforge.org/browse/TPRUN-2248)): Keep field-level properties when cleaning an Avro schema
 
 ## [9.0.1] - 2021-10-07
 ### Security
@@ -25,9 +15,9 @@ N/A
 
 ## [9.0.0] - 2021-06-02
 ### Changed
-- chore(TPRUN-514): Refactor AvroUtils for Discovery processor
-- chore(TPRUN-979): Refactor AvroUtils for Validation processor
-- chore(TPRUN-952): Refactor ResizableList
+- chore([TPRUN-514](https://jira.talendforge.org/browse/TPRUN-514)): Refactor AvroUtils for Discovery processor
+- chore([TPRUN-979](https://jira.talendforge.org/browse/TPRUN-979)): Refactor AvroUtils for Validation processor
+- chore([TPRUN-952](https://jira.talendforge.org/browse/TPRUN-952)): Refactor ResizableList
 ### Security
 - fix([TDQ-19066](https://jira.talendforge.org/browse/TDQ-19066)): Fix jackson-databind issues
 - fix([TDQ-19073](https://jira.talendforge.org/browse/TDQ-19073)): Fix JUnit issue

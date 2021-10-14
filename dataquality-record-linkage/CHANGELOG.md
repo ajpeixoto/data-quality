@@ -4,19 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
-### Changed
-N/A
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
-### Security
-N/A
+## [9.0.2] - 2021-10-14
 
 ## [9.0.1] - 2021-10-07
 ### Changed
@@ -99,7 +87,7 @@ fix([TDQ-18542](https://jira.talendforge.org/browse/TDQ-18542)) tMatchGroup(t-sw
 
 ## [3.3.0] - 2017-04-07
 - [TDQ-13511](https://jira.talendforge.org/browse/TDQ-13511) refactoring inner class TSwooshGrouping.GroupingCallBack make it become a Outer Class
-- TMDM-10649 : Adapt to CombinedRecordMatcher
+- [TMDM-10649](https://jira.talendforge.org/browse/TMDM-10649) : Adapt to CombinedRecordMatcher
 - [TDQ-13225](https://jira.talendforge.org/browse/TDQ-13225) Swoosh with the option "store on disk"
 - bug fixed [TDQ-13053](https://jira.talendforge.org/browse/TDQ-13053) SurvivorShip rules impact the grouping of swoosh and fixed dailog can not be open issue when multipass
 - [TDQ-13120](https://jira.talendforge.org/browse/TDQ-13120) wrong GID in multipass swoosh--revert [TDQ-12851](https://jira.talendforge.org/browse/TDQ-12851)
