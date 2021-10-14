@@ -640,7 +640,7 @@ public class AvroUtils {
     }
 
     /**
-     * Remove properties for Avro Schema
+     * Remove properties for Avro Schema. Properties that are on fields are all kept.
      *
      * @param schema       schema to modify
      * @param propsToAvoid list of props names to remove
@@ -653,7 +653,10 @@ public class AvroUtils {
                 List<Schema.Field> fields = new ArrayList<>();
                 for (Schema.Field field : schema.getFields()) {
                     Schema fieldSchema = cleanSchema(field.schema(), propsToAvoid);
-                    fields.add(new Schema.Field(field.name(), fieldSchema, field.doc(), field.defaultVal()));
+                    Schema.Field newField =
+                            new Schema.Field(field.name(), fieldSchema, field.doc(), field.defaultVal());
+                    addFieldProps(field, newField);
+                    fields.add(newField);
                 }
                 Schema recordSchema = Schema.createRecord(schema.getName(), schema.getDoc(), schema.getNamespace(),
                         schema.isError(), fields);
@@ -709,5 +712,11 @@ public class AvroUtils {
             if (!propsToAvoid.contains(k))
                 destinationSchema.addProp(k, v);
         });
+    }
+
+    private static void addFieldProps(Schema.Field source, Schema.Field dest) {
+        for (Map.Entry<String, Object> props : source.getObjectProps().entrySet()) {
+            dest.addProp(props.getKey(), props.getValue());
+        }
     }
 }

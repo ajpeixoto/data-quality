@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+fix(TPRUN-2248): Keep field-level properties when cleaning an Avro schema
 ### Security
 N/A
 

@@ -397,6 +397,15 @@ public class AvroUtilsTest {
     }
 
     @Test
+    public void testCleanSchemaWithFieldProperties() {
+        Schema schema = SchemaBuilder.record("inputRow").fields().requiredString("_").endRecord();
+        schema.getField("_").addProp("talend.component.label", "ô");
+        IndexedRecord record = new GenericRecordBuilder(schema).set("_", "value").build();
+
+        assertEquals(record.getSchema(), AvroUtils.cleanSchema(record.getSchema(), Collections.emptyList()));
+    }
+
+    @Test
     public void testCleanSchemaSimplePrimitive() {
         Schema schema = SchemaBuilder
                 .record("record")
