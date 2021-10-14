@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+fix(TPRUN-2195): Update get TimeZone Display Name
 ### Security
 N/A
 

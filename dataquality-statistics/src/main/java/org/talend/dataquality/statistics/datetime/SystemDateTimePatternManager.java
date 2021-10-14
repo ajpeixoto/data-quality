@@ -15,6 +15,7 @@ package org.talend.dataquality.statistics.datetime;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormatSymbols;
+import java.time.ZoneId;
 import java.time.chrono.JapaneseEra;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -28,6 +29,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.IOUtils;
@@ -113,6 +115,7 @@ public class SystemDateTimePatternManager {
     }
 
     private static void loadLanguagesDatesWords() {
+        Set<String> zoneIds = ZoneId.getAvailableZoneIds();
         for (Locale locale : LOCALES) {
             final DateFormatSymbols dfs = new DateFormatSymbols(locale);
             buildWordsToLocales(MONTHS, new HashSet<>(Arrays.asList(dfs.getMonths())), locale);
@@ -121,13 +124,12 @@ public class SystemDateTimePatternManager {
             buildWordsToLocales(SHORT_WEEKDAYS, new HashSet<>(Arrays.asList(dfs.getShortWeekdays())), locale);
             buildWordsToLocales(AM_PM, new HashSet<>(Arrays.asList(dfs.getAmPmStrings())), locale);
             buildWordsToLocales(ERAS, new HashSet<>(Arrays.asList(dfs.getEras())), locale);
-
             try {
-                final Set<String> zoneStringSet = new HashSet<>();
-                for (String[] zoneStrings : dfs.getZoneStrings()) {
-                    zoneStringSet.add(zoneStrings[2]); // short name of zone in standard time
-                    zoneStringSet.add(zoneStrings[4]); // short name of zone in daylight saving time
-                }
+                Set<String> zoneStringSet = zoneIds.stream().flatMap(zoneId -> {
+                    TimeZone tz = TimeZone.getTimeZone(zoneId);
+                    return Stream.of(tz.getDisplayName(false, TimeZone.SHORT, locale),
+                            tz.getDisplayName(true, TimeZone.SHORT, locale));
+                }).filter(tz -> !tz.startsWith("GMT") || tz.equals("GMT")).collect(Collectors.toSet());
                 buildWordsToLocales(TIMEZONES, zoneStringSet, locale);
             } catch (Exception e) {
                 LOGGER.error("Error while loading languages dates words", e);
