@@ -44,7 +44,7 @@ public class UpdateComponentDefinition {
 
     private static final String DQ_LIB_VERSION = "8.3.1-SNAPSHOT"; //$NON-NLS-1$
 
-    private static final String DQ_STUDIO_LIB_VERSION = "7.4.1-SNAPSHOT"; //$NON-NLS-1$
+    private static final String DQ_STUDIO_LIB_VERSION = "8.0.1"; //$NON-NLS-1$
 
     private static final String DAIKON_VERSION = ""; //$NON-NLS-1$
 
