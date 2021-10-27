@@ -28,8 +28,7 @@ pipeline {
 
     environment {
         SLACK_CHANNEL = 'tdq_ci'
-        VERACODE_APP_NAME = 'Data Quality'
-        VERACODE_SANDBOX = 'DQ Lib'
+        VERACODE_APP_NAME = 'data-quality'
         TIMESTAMP = sh(returnStdout: true, script: "date +%Y%m%d_%H%M%S").trim()
     }
 
@@ -59,7 +58,6 @@ pipeline {
                             fileNamePattern: '',
                             useProxy: false,
                             replacementPattern: '',
-                            sandboxName: "$VERACODE_SANDBOX",
                             scanExcludesPattern: '',
                             scanIncludesPattern: '',
                             scanName: "DQ-${env.BUILD_NUMBER}-${TIMESTAMP}",
