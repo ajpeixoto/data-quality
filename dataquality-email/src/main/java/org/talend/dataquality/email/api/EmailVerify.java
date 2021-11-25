@@ -82,8 +82,20 @@ public class EmailVerify implements IEmailChecker {
      * @return current EmailVerify instance
      */
     public EmailVerify addCallbackMailServerChecker(boolean isCallbackMailServer) {
+        return addCallbackMailServerChecker(isCallbackMailServer, 10);
+    }
+
+    /**
+     * Call back mail server checker should be last one.
+     * @param isCallbackMailServer  whether should be added for current call back checker
+     * @param timeout max timeout
+     * @return current EmailVerify instance
+     */
+    public EmailVerify addCallbackMailServerChecker(boolean isCallbackMailServer, int timeout) {
         if (isCallbackMailServer) {
-            addChecker(new CallbackMailServerCheckerImpl());
+            CallbackMailServerCheckerImpl callbackMailServerCheckerImpl = new CallbackMailServerCheckerImpl();
+            callbackMailServerCheckerImpl.setTimeout(timeout);
+            addChecker(callbackMailServerCheckerImpl);
         }
         return this;
     }
