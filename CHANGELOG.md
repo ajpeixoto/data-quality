@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.0.3] - 2021-11-25
+### Security
+fix([TDQ-19849](https://jira.talendforge.org/browse/TDQ-19849)): Add a timeout for 'callback' [dataquality-email]
+
 ## [9.0.2] - 2021-10-14
 ### Fixed
 fix([TPRUN-2248](https://jira.talendforge.org/browse/TPRUN-2248)): Keep field-level properties when cleaning an Avro schema [dataquality-common]
