@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+fix(TDQ-19849): Add a timeout for 'callback'
 ### Security
 N/A
 

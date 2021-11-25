@@ -59,6 +59,8 @@ public class CallbackMailServerCheckerImpl extends AbstractEmailChecker {
 
     private DirContext ictx = null;
 
+    private int timeout = 0;
+
     /**
      * The default port for smtp MX(Mail Exchanger) server
      */
@@ -249,6 +251,8 @@ public class CallbackMailServerCheckerImpl extends AbstractEmailChecker {
             try {
                 int res;
                 skt = new Socket(mxList.get(mx), port);
+                //set time out 10s to avoid stuck
+                skt.setSoTimeout(timeout == 0 ? 10000 : timeout * 1000);
                 BufferedReader rdr = new BufferedReader(new InputStreamReader(skt.getInputStream()));
                 BufferedWriter wtr = new BufferedWriter(new OutputStreamWriter(skt.getOutputStream()));
 
@@ -390,6 +394,14 @@ public class CallbackMailServerCheckerImpl extends AbstractEmailChecker {
             result = EmailVerifyResult.REJECTED;
         }
         return result;
+    }
+
+    public int getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
     }
 
 }
