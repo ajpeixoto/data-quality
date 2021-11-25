@@ -17,7 +17,7 @@ N/A
 N/A
 ### Security
 N/A
-
+fix(TDQ-19849): Add a timeout for 'callback'
 ## [9.0.2] - 2021-10-14
 
 ## [9.0.1] - 2021-10-07
