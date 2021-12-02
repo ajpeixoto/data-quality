@@ -12,19 +12,17 @@ import org.junit.Test;
 
 public class PhoneNumberHandlerTest {
 
-    private String US_NUM_1 = "+1-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_1 = "+1-541-754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_2 = "1-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_2 = "1-541-754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_3 = "001-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_3 = "001-541-754-3010"; //$NON-NLS-1$
 
     private PhoneNumberHandler handler;
 
     @Before
     public void setUp() {
-        handler = new PhoneNumberHandler();
-        handler.setDefaultRegion("US"); //$NON-NLS-1$
-        handler.setDefaultLocale(Locale.ENGLISH);
+        handler = new PhoneNumberHandler("US", Locale.ENGLISH); //$NON-NLS-1$
     }
 
     @Test
@@ -57,7 +55,6 @@ public class PhoneNumberHandlerTest {
 
         assertEquals("+1 541-754-3010", handler.formatInternational(US_NUM_1)); //$NON-NLS-1$
         assertEquals("+1 541-754-3010", handler.formatInternational(US_NUM_2)); //$NON-NLS-1$
-
     }
 
     @Test
@@ -88,7 +85,6 @@ public class PhoneNumberHandlerTest {
         assertEquals("Corvallis, OR", handler.getGeocoderDescriptionForNumber(US_NUM_1)); //$NON-NLS-1$
         assertEquals("Corvallis, OR", handler.getGeocoderDescriptionForNumber(US_NUM_2)); //$NON-NLS-1$
         assertEquals(StringUtils.EMPTY, handler.getGeocoderDescriptionForNumber(US_NUM_3));
-
     }
 
     @Test
@@ -98,13 +94,11 @@ public class PhoneNumberHandlerTest {
 
     @Test
     public void testGetDefaultLocale() {
-        handler.setDefaultLocale(Locale.FRANCE);
-        assertEquals(Locale.FRANCE, handler.getDefaultLocale());
+        assertEquals(Locale.ENGLISH, handler.getDefaultLocale());
     }
 
     @Test
     public void testGetDefaultRegion() {
-        handler.setDefaultRegion("FR");
-        assertEquals("FR", handler.getDefaultRegion());
+        assertEquals("US", handler.getDefaultRegion());
     }
 }

@@ -44,7 +44,7 @@ public enum PhoneNumberTypeEnum {
     // specific region.
     UNKNOWN("Unknown"); //$NON-NLS-1$
 
-    private String name;
+    private final String name;
 
     PhoneNumberTypeEnum(String name) {
         this.name = name;

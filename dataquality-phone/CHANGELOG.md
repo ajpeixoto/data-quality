@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 N/A
 ### Changed
 chore(TPRUN-2572): Bump and homogenize libphonenumber dependencies
+chore(TPRUN-2572): Refactor code and fix javadoc
 ### Removed
 N/A
 ### Deprecated

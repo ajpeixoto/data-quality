@@ -26,76 +26,68 @@ import org.junit.Test;
 import com.google.i18n.phonenumbers.PhoneNumberToTimeZonesMapper;
 import com.google.i18n.phonenumbers.Phonenumber;
 
-/**
- * DOC qiongli class global comment. Detailled comment
- */
 public class PhoneNumberHandlerBaseTest {
 
-    private String FR_NUM_1 = "+33656965822"; //$NON-NLS-1$
+    private final String FR_NUM_1 = "+33656965822"; //$NON-NLS-1$
 
-    private String FR_NUM_2 = "+33(0)147554323"; //$NON-NLS-1$
+    private final String FR_NUM_2 = "+33(0)147554323"; //$NON-NLS-1$
 
-    private String FR_NUM_3 = "000147554323"; //$NON-NLS-1$
+    private final String FR_NUM_3 = "000147554323"; //$NON-NLS-1$
 
-    private String FR_NUM_4 = "00(0)147554323"; //$NON-NLS-1$
+    private final String FR_NUM_4 = "00(0)147554323"; //$NON-NLS-1$
 
-    private String FR_NUM_5 = "0662965822"; //$NON-NLS-1$
+    private final String FR_NUM_5 = "0662965822"; //$NON-NLS-1$
 
-    private String US_NUM_1 = "+1-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_1 = "+1-541-754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_2 = "1-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_2 = "1-541-754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_3 = "001-541-754-3010"; //$NON-NLS-1$
+    private final String US_NUM_3 = "001-541-754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_4 = "(541) 754-3010"; //$NON-NLS-1$
+    private final String US_NUM_4 = "(541) 754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_5 = "754-3010"; //$NON-NLS-1$
+    private final String US_NUM_5 = "754-3010"; //$NON-NLS-1$
 
-    private String US_NUM_6 = "191 541 754 3010"; //$NON-NLS-1$
+    private final String US_NUM_6 = "191 541 754 3010"; //$NON-NLS-1$
 
-    private String US_NUM_7 = "(724) 203-2300"; //$NON-NLS-1$
+    private final String US_NUM_7 = "(724) 203-2300"; //$NON-NLS-1$
 
-    private String DE_NUM_1 = "+49-89-636-48018"; //$NON-NLS-1$
+    private final String DE_NUM_1 = "+49-89-636-48018"; //$NON-NLS-1$
 
-    private String DE_NUM_2 = "19-49-89-636-48018"; //$NON-NLS-1$
+    private final String DE_NUM_2 = "19-49-89-636-48018"; //$NON-NLS-1$
 
-    private String DE_NUM_3 = "(089) / 636-48018"; //$NON-NLS-1$
+    private final String DE_NUM_3 = "(089) / 636-48018"; //$NON-NLS-1$
 
-    private String CN_NUM_1 = "18611281173"; //$NON-NLS-1$
+    private final String CN_NUM_1 = "18611281173"; //$NON-NLS-1$
 
-    private String CN_NUM_2 = "13521588310"; //$NON-NLS-1$
+    private final String CN_NUM_2 = "13521588310"; //$NON-NLS-1$
 
-    private String CN_NUM_3 = "1065267475"; //$NON-NLS-1$
+    private final String CN_NUM_3 = "1065267475"; //$NON-NLS-1$
 
-    private String CN_NUM_4 = "07927234582"; //$NON-NLS-1$
+    private final String CN_NUM_4 = "07927234582"; //$NON-NLS-1$
 
-    private String JP_NUM_1 = "03-1258-2584"; //$NON-NLS-1$
+    private final String JP_NUM_1 = "03-1258-2584"; //$NON-NLS-1$
 
-    private String JP_NUM_2 = "8025879512"; //$NON-NLS-1$
+    private final String JP_NUM_2 = "8025879512"; //$NON-NLS-1$
 
-    private String JP_NUM_3 = "0463-25-8888"; //$NON-NLS-1$
+    private final String JP_NUM_3 = "0463-25-8888"; //$NON-NLS-1$
 
-    private String JP_NUM_4 = "070-3333-3222"; //$NON-NLS-1$
+    private final String JP_NUM_4 = "070-3333-3222"; //$NON-NLS-1$
 
-    private String JP_NUM_5 = "052-2451-4455"; //$NON-NLS-1$
+    private final String JP_NUM_5 = "052-2451-4455"; //$NON-NLS-1$
 
-    private String DE_NUM_4 = "636-48018"; //$NON-NLS-1$
+    private final String DE_NUM_4 = "636-48018"; //$NON-NLS-1$
 
-    private String REGCODE_FR = "FR"; //$NON-NLS-1$
+    private final String REGCODE_FR = "FR"; //$NON-NLS-1$
 
-    private String REGCODE_US = "US"; //$NON-NLS-1$
+    private final String REGCODE_US = "US"; //$NON-NLS-1$
 
-    private String REGCODE_DE = "DE"; //$NON-NLS-1$
+    private final String REGCODE_DE = "DE"; //$NON-NLS-1$
 
-    private String REGCODE_CN = "CN"; //$NON-NLS-1$
+    private final String REGCODE_CN = "CN"; //$NON-NLS-1$
 
-    private String REGCODE_JP = "JP"; //$NON-NLS-1$
+    private final String REGCODE_JP = "JP"; //$NON-NLS-1$
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#isValidPhoneNumber(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testIsValidPhoneNumber() {
         assertFalse(PhoneNumberHandlerBase.isValidPhoneNumber(null, REGCODE_FR));
@@ -123,14 +115,8 @@ public class PhoneNumberHandlerBaseTest {
         assertTrue(PhoneNumberHandlerBase.isValidPhoneNumber(JP_NUM_3, REGCODE_JP));
         assertTrue(PhoneNumberHandlerBase.isValidPhoneNumber(JP_NUM_4, REGCODE_JP));
         assertFalse(PhoneNumberHandlerBase.isValidPhoneNumber(JP_NUM_5, REGCODE_JP));
-
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#parseToPhoneNumber(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testParseToPhoneNumber() {
         assertNull(PhoneNumberHandlerBase.parseToPhoneNumber(null, REGCODE_FR));
@@ -161,14 +147,8 @@ public class PhoneNumberHandlerBaseTest {
         assertNotNull(PhoneNumberHandlerBase.parseToPhoneNumber(JP_NUM_3, REGCODE_JP));
         assertNotNull(PhoneNumberHandlerBase.parseToPhoneNumber(JP_NUM_4, REGCODE_JP));
         assertNotNull(PhoneNumberHandlerBase.parseToPhoneNumber(JP_NUM_5, REGCODE_JP));
-
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#isPossiblePhoneNumber(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testIsPossiblePhoneNumber() {
         assertTrue(PhoneNumberHandlerBase.isPossiblePhoneNumber(FR_NUM_1, null));
@@ -205,11 +185,6 @@ public class PhoneNumberHandlerBaseTest {
 
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#formatE164(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testFormatE164() {
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.formatE164(null, REGCODE_FR)); // $NON-NLS-1$
@@ -233,11 +208,6 @@ public class PhoneNumberHandlerBaseTest {
 
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#formatInternational(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testFormatInternational() {
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.formatInternational(null, REGCODE_FR)); // $NON-NLS-1$
@@ -259,14 +229,8 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals("+81 463-25-8888", PhoneNumberHandlerBase.formatInternational(JP_NUM_3, REGCODE_JP)); //$NON-NLS-1$
         assertEquals("+81 70-3333-3222", PhoneNumberHandlerBase.formatInternational(JP_NUM_4, REGCODE_JP)); //$NON-NLS-1$
         assertEquals("+81 52-2451-4455", PhoneNumberHandlerBase.formatInternational(JP_NUM_5, REGCODE_JP)); //$NON-NLS-1$
-
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#formatNational(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testFormatNational() {
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.formatNational(null, REGCODE_FR)); // $NON-NLS-1$
@@ -290,11 +254,6 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals("052-2451-4455", PhoneNumberHandlerBase.formatNational(JP_NUM_5, REGCODE_JP)); //$NON-NLS-1$
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#formatRFC396(java.lang.Object, java.lang.String)}
-     * .
-     */
     @Test
     public void testFormatRFC396() {
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.formatRFC396(null, REGCODE_FR)); // $NON-NLS-1$
@@ -318,19 +277,11 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals("tel:+81-52-2451-4455", PhoneNumberHandlerBase.formatRFC396(JP_NUM_5, REGCODE_JP)); //$NON-NLS-1$
     }
 
-    /**
-     * Test method for {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#getSupportedRegions()} .
-     */
     @Test
     public void testGetSupportedRegions() {
         assertEquals(245, PhoneNumberHandlerBase.getSupportedRegions().size());
-
     }
 
-    /**
-     * Test method for
-     * {@link org.talend.dataquality.standardization.phone.PhoneNumberHandlerBase#getCountryCodeForRegion(java.lang.String)} .
-     */
     @Test
     public void testExtractCountryCode() {
 
@@ -352,7 +303,6 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals(0, PhoneNumberHandlerBase.extractCountrycode(DE_NUM_3));
         assertEquals(0, PhoneNumberHandlerBase.extractCountrycode(DE_NUM_4));
         assertEquals(0, PhoneNumberHandlerBase.extractCountrycode(DE_NUM_2));
-
     }
 
     @Test
@@ -375,7 +325,6 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.extractRegionCode(DE_NUM_3));
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.extractRegionCode(DE_NUM_4));
         assertEquals(StringUtils.EMPTY, PhoneNumberHandlerBase.extractRegionCode(DE_NUM_2));
-
     }
 
     @Test
@@ -399,11 +348,10 @@ public class PhoneNumberHandlerBaseTest {
                 PhoneNumberHandlerBase.getCarrierNameForNumber(DE_NUM_1, REGCODE_DE, Locale.UK));
         assertEquals(StringUtils.EMPTY,
                 PhoneNumberHandlerBase.getCarrierNameForNumber(DE_NUM_1, REGCODE_DE, Locale.GERMANY));
-
     }
 
     @Test
-    public void testgetGeocoderDescriptionForNumber() {
+    public void testGetGeocoderDescriptionForNumber() {
         assertEquals(StringUtils.EMPTY, // $NON-NLS-1$
                 PhoneNumberHandlerBase.getGeocoderDescriptionForNumber(null, REGCODE_CN, Locale.SIMPLIFIED_CHINESE));
 
@@ -467,7 +415,6 @@ public class PhoneNumberHandlerBaseTest {
                 PhoneNumberHandlerBase.getGeocoderDescriptionForNumber(JP_NUM_4, REGCODE_JP, Locale.JAPAN));
         assertEquals(StringUtils.EMPTY, //$NON-NLS-1$
                 PhoneNumberHandlerBase.getGeocoderDescriptionForNumber(JP_NUM_5, REGCODE_JP, Locale.JAPAN));
-
     }
 
     @Test
@@ -531,7 +478,6 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals("[Etc/Unknown]", PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_2, REGCODE_US).toString()); //$NON-NLS-1$
         assertEquals("[Etc/Unknown]", PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_3, REGCODE_US).toString()); //$NON-NLS-1$
         assertEquals("[Etc/Unknown]", PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_4, REGCODE_US).toString()); //$NON-NLS-1$
-
     }
 
     @Test
@@ -580,7 +526,6 @@ public class PhoneNumberHandlerBaseTest {
         assertEquals(0, PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_2, REGCODE_US, false).size()); // $NON-NLS-1$
         assertEquals(0, PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_3, REGCODE_US, false).size()); // $NON-NLS-1$
         assertEquals(0, PhoneNumberHandlerBase.getTimeZonesForNumber(DE_NUM_4, REGCODE_US, false).size()); // $NON-NLS-1$
-
     }
 
     @Test
