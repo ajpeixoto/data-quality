@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+chore(TPRUN-2572): Bump and homogenize libphonenumber dependencies
 ### Removed
 N/A
 ### Deprecated
