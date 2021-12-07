@@ -135,6 +135,9 @@ public class MatchAnalysisConstant {
 
     public static final String DATA_SAMPLE_TABLE_COLUMN_SELECTION = "DATA_SAMPLE_TABLE_COLUMN_SELECTION"; //$NON-NLS-1$
 
+    // Mapping with org.talend.dataprofiler.core.PluginConstant.LAZY_LOAD_DATA
+    public static final String LAZY_LOAD_DATA = "LAZY_LOAD_DATA"; //$NON-NLS-1$
+
     public static final String MATCHING_KEY_AND_SURVIVOR_DEFINITION_SECTION_NAME =
             Messages.getString("MatchAnalysisConstant.MATCHING_KEY_AND_SURVIVOR_DEFINITION_SECTION_NAME"); //$NON-NLS-1$
 
