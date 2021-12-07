@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- fix(TDQ-19203): Load data in background when opening an analysis
 ### Removed
 N/A
 ### Deprecated
