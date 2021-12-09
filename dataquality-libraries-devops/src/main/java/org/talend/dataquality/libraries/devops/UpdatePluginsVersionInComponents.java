@@ -41,14 +41,12 @@ public class UpdatePluginsVersionInComponents {
 
     private static final String MAIN_PLUGINS_FOLDER = "/main/plugins"; //$NON-NLS-1$
 
-    private static final String TALEND_STUDIO_VERSION = "7.4.1"; //$NON-NLS-1$
+    private static final String TALEND_STUDIO_VERSION = "8.0.1"; //$NON-NLS-1$
 
-    private static final String[] PROVIDERS = new String[] {
-            "/org.talend.designer.components.tdqprovider" //$NON-NLS-1$
+    private static final String[] PROVIDERS = new String[] { "/org.talend.designer.components.tdqprovider" //$NON-NLS-1$
     };
 
-    private static final String[] COMPONENTS_FOLDERS = new String[] {
-            "/components", //$NON-NLS-1$
+    private static final String[] COMPONENTS_FOLDERS = new String[] { "/components", //$NON-NLS-1$
             "/components_dynamic" //$NON-NLS-1$
     };
 
@@ -134,8 +132,7 @@ public class UpdatePluginsVersionInComponents {
 
         for (String provider : PROVIDERS) {
             for (String folder : COMPONENTS_FOLDERS) {
-                String componentRootPath =
-                        projectRoot + TDQ_STUDIO_EE_ROOT + MAIN_PLUGINS_FOLDER + provider + folder;
+                String componentRootPath = projectRoot + TDQ_STUDIO_EE_ROOT + MAIN_PLUGINS_FOLDER + provider + folder;
                 System.out.println("\nProvider: " + provider); // NOSONAR
                 File componentRoot = new File(componentRootPath);
                 if (componentRoot.isDirectory()) {
