@@ -40,8 +40,6 @@ public class UpdateComponentDefinition {
 
     private static final String MAIN_PLUGINS_FOLDER = "/main/plugins"; //$NON-NLS-1$
 
-    private static final String COMPONENTS_FOLDER = "/components"; //$NON-NLS-1$
-
     private static final String DQ_LIB_VERSION = "8.3.1-SNAPSHOT"; //$NON-NLS-1$
 
     private static final String DQ_STUDIO_LIB_VERSION = "8.0.1"; //$NON-NLS-1$
@@ -53,6 +51,10 @@ public class UpdateComponentDefinition {
             "/org.talend.designer.components.tdqhadoopprovider", // //$NON-NLS-1$
             "/org.talend.designer.components.tdqsparkprovider", // //$NON-NLS-1$
             "/org.talend.designer.components.tdqsparkstprovider",// //$NON-NLS-1$
+    };
+
+    private static final String[] COMPONENTS_FOLDERS = new String[] { "/components", //$NON-NLS-1$
+            "/components_dynamic" //$NON-NLS-1$
     };
 
     private static final Map<String, String> DEP_VERSION_MAP = new HashMap<>();
@@ -138,20 +140,19 @@ public class UpdateComponentDefinition {
                 .getPath() + File.separator;
 
         for (String provider : PROVIDERS) {
-            String componentRootPath =
-                    projectRoot + TDQ_STUDIO_EE_ROOT + MAIN_PLUGINS_FOLDER + provider + COMPONENTS_FOLDER;
-            System.out.println("\nProvider: " + provider); // NOSONAR
-            File componentRoot = new File(componentRootPath);
-            if (componentRoot.isDirectory()) {
-                File[] files = componentRoot.listFiles();
-                for (File f : files) {
-                    if (f.isDirectory() && f.getName().startsWith("t")) { //$NON-NLS-1$
-                        handleComponentDefinition(f);
+            for (String folder : COMPONENTS_FOLDERS) {
+                String componentRootPath = projectRoot + TDQ_STUDIO_EE_ROOT + MAIN_PLUGINS_FOLDER + provider + folder;
+                System.out.println("\nProvider: " + provider); // NOSONAR
+                File componentRoot = new File(componentRootPath);
+                if (componentRoot.isDirectory()) {
+                    File[] files = componentRoot.listFiles();
+                    for (File f : files) {
+                        if (f.isDirectory() && f.getName().startsWith("t")) { //$NON-NLS-1$
+                            handleComponentDefinition(f);
+                        }
                     }
                 }
             }
         }
-
     }
-
 }
