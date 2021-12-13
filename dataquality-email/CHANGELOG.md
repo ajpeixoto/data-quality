@@ -14,9 +14,9 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-fix(TDQ-19849): Add a timeout for 'callback' 
+- fix(TDQ-19849): Add a timeout for 'callback' 
 ### Security
-N/A
+- fix(TDQ-19973): upgrade 'log4j-core' to 2.15.0
 
 ## [9.0.2] - 2021-10-14
 

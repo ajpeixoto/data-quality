@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-19973): upgrade 'log4j-core' to 2.15.0
 
 ## [9.0.2] - 2021-10-14
 ### Fixed
