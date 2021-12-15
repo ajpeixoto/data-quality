@@ -4,20 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
+## [9.1.0] - 2021-12-15
 ### Changed
-chore(TPRUN-2572): Bump and homogenize libphonenumber dependencies
-chore(TPRUN-2572): Refactor code and fix javadoc
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
+chore([TPRUN-2572](https://jira.talendforge.org/browse/TPRUN-2572)): Bump and homogenize libphonenumber dependencies
+chore([TPRUN-2572](https://jira.talendforge.org/browse/TPRUN-2572)): Refactor code and fix javadoc
 ### Security
-- fix(TDQ-19973): upgrade 'log4j-core' to 2.16.0
+- fix([TDQ-19973](https://jira.talendforge.org/browse/TDQ-19973)): upgrade 'log4j-core' to 2.16.0
 
 ## [9.0.2] - 2021-10-14
 
