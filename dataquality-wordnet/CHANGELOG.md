@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-- fix(TDQ-20024): upgrade 'log4j-core' to 2.17.0
+- fix(TDQ-20024): upgrade 'log4j-core' to 2.17.1
 
 ## [9.1.0] - 2021-12-15
 ### Security
