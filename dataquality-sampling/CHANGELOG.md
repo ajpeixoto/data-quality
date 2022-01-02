@@ -4,19 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
-### Changed
-N/A
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
+## [8.0.19] - 2021-12-31
 ### Security
-- fix(TDQ-20024): upgrade 'log4j-core' to 2.17.1
+- fix([TDQ-20024](https://jira.talendforge.org/browse/TDQ-20024)): upgrade 'log4j-core' to 2.17.1
 
 ## [8.0.18] - 2021-12-15
 ### Security
