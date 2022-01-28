@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- fix(TDQ-20090): export org.talend.dataquality.sampling.collectors package
 ### Removed
 N/A
 ### Deprecated

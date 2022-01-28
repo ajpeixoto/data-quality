@@ -6,6 +6,7 @@ Bundle-Version: 9.1.2.SNAPSHOT
 Bundle-Vendor: .Talend SA.
 Export-Package: org.talend.dataquality.duplicating,
  org.talend.dataquality.sampling,
+ org.talend.dataquality.sampling.collectors,
  org.talend.dataquality.sampling.exception,
  org.talend.dataquality.sampling.parallel
 Import-Package: org.apache.commons.codec.language,
