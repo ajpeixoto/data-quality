@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+- Chore: remove useless avro dependency that pulls too much crap
 ### Security
 N/A
 

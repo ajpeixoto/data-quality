@@ -37,8 +37,6 @@ import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.generic.IndexedRecord;
 import org.talend.dataquality.common.inference.AvroAnalyzer;
 
-import avro.shaded.com.google.common.collect.Maps;
-
 /**
  * Data type quality analyzer for Avro records.
  *
@@ -316,7 +314,7 @@ public class AvroDataTypeDiscoveryAnalyzer implements AvroAnalyzer {
         case NULL:
             if (dataTypeResults.containsKey(fieldName)) {
 
-                Map<String, Object> aggregate = Maps.newHashMap();
+                Map<String, Object> aggregate = new HashMap<>();
 
                 dataTypeResults
                         .get(fieldName)
