@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20134): Fix XStream Core issues (to 1.4.19)
 
 ## [9.1.2] - 2022-02-04
 
