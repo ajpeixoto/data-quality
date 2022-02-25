@@ -44,7 +44,7 @@ public class ChronologyParameterManagerTest {
     }
 
     @Test
-    public void testgetDateTimeFormatterWithChronology() {
+    public void testGetDateTimeFormatterWithChronology() {
         String pattern = "yyyy-MM-dd G"; //$NON-NLS-1$
         Locale locale = Locale.JAPANESE;
         DateTimeFormatter dateTimeFormatter =
