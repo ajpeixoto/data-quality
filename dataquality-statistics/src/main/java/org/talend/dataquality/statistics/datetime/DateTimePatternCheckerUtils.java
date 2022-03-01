@@ -1,13 +1,14 @@
 package org.talend.dataquality.statistics.datetime;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,13 +80,17 @@ public class DateTimePatternCheckerUtils {
     }
 
     private static Set<String> readDateTimeFormats(String resourceName) {
-        try {
-            Path p = Paths.get(DateTimePatternCheckerUtils.class.getResource(resourceName).getPath());
-            return Files.readAllLines(p).stream().map(line -> line.split("\t")[1]).collect(Collectors.toSet());
+        try (InputStream inputStream =
+                Objects.requireNonNull(DateTimePatternCheckerUtils.class.getResourceAsStream(resourceName))) {
+            return IOUtils
+                    .readLines(inputStream, StandardCharsets.UTF_8)
+                    .stream()
+                    .map(line -> line.split("\t")[1])
+                    .collect(Collectors.toSet());
         } catch (IOException e) {
-            LOGGER.error("IOException thrown:", e);
+            LOGGER.error(e.getMessage(), e);
+            return Collections.emptySet();
         }
-        return Collections.emptySet();
     }
 
     private static boolean isDateOnlyPattern(String pattern) {
