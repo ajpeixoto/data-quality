@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-N/A
+- wi(TDQ-20156): Provide a date/time/datetime pattern checker
 ### Changed
 N/A
 ### Removed
