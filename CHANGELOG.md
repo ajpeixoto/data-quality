@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.0.6] - 2022-03-04
+### Added
+- wi([TDQ-20156](https://jira.talendforge.org/browse/TDQ-20156)): Provide a date/time/datetime pattern checker [dataquality-statistics]
+### Changed
+- fix([TDQ-20090](https://jira.talendforge.org/browse/TDQ-20090)): export org.talend.dataquality.sampling.collectors package [dataquality-sampling]
+### Security
+- fix([TDQ-20134](https://jira.talendforge.org/browse/TDQ-20134)): Fix XStream Core issues (to 1.4.19) [dataquality-survivorship]
+
 ## [9.0.5] - 2022-01-13
 ### Security
 - fix([TDQ-20024](https://jira.talendforge.org/browse/TDQ-20024)): upgrade 'log4j-core' to 2.17.1 [dataquality-common]
