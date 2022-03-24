@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20188): Fix Protocol Buffers [Core] issues (to 3.19.2)
 
 ## [9.1.3] - 2022-03-03
 ### Security
