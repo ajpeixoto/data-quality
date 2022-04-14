@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.4] - 2022-04-14
+### Security
+- fix([TDQ-20188](https://jira.talendforge.org/browse/TDQ-20188)): Fix Protocol Buffers [Core] issues (to 3.19.2) [dataquality-survivorship]
+
 ## [9.1.3] - 2022-03-03
 ### Added
 - wi([TDQ-20156](https://jira.talendforge.org/browse/TDQ-20156)): Provide a date/time/datetime pattern checker [dataquality-statistics]
