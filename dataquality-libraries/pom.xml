@@ -25,9 +25,9 @@
 		<powermock.version>2.0.2</powermock.version>
 		<re2j.version>1.2</re2j.version>
 		<org.talend.daikon.version>5.11.0</org.talend.daikon.version>
-		<commons-codec.version>1.14</commons-codec.version>
-		<jackson.version>2.11.4</jackson.version>
-<!--adapt for the version using in studio-->
+		<commons-codec.version>1.14</commons-codec.version><!--adapt for the version using in studio-->
+		<jackson.version>2.13.2</jackson.version>
+		<jackson-databind.version>2.13.2.2</jackson-databind.version>
 
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
@@ -90,9 +90,19 @@
 				<version>3.19.2</version>
 			</dependency>
 			<!-- Jackson -->
-            <dependency>
+			<dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
 
