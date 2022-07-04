@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20481): upgrade daikon to 6.8.2
 
 ## [9.1.5] - 2022-05-12
 ### Security
