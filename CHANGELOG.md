@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.6] - 2022-07-14
+### Security
+- fix([TDQ-20481](https://jira.talendforge.org/browse/TDQ-20481)): upgrade daikon to 6.8.2 [dataquality-common]
+- fix([TDQ-20481](https://jira.talendforge.org/browse/TDQ-20481)): upgrade daikon to 6.8.2 [dataquality-statistics]
+
 ## [9.1.5] - 2022-05-12
 ### Security
 - fix([TDQ-20210](https://jira.talendforge.org/browse/TDQ-20210)): Fix jackson-databind issues (to 2.13.2.2) [dataquality-common]
