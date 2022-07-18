@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20580): Fix Apache Commons Configuration (to 2.8.0)
 
 ## [8.0.21] - 2022-04-29
 ### Security
