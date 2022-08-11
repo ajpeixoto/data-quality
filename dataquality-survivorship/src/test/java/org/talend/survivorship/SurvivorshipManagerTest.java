@@ -31,9 +31,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.drools.core.impl.InternalKnowledgeBase;
 import org.junit.Before;
 import org.junit.Test;
-import org.kie.internal.KnowledgeBase;
 import org.talend.survivorship.model.Attribute;
 import org.talend.survivorship.model.Column;
 import org.talend.survivorship.model.ConflictRuleDefinition;
@@ -91,7 +91,7 @@ public class SurvivorshipManagerTest {
     @Test
     public void testInitKnowledgeBase() {
         manager.initKnowledgeBase();
-        KnowledgeBase base = manager.getKnowledgeBase();
+        InternalKnowledgeBase base = manager.getKnowledgeBase();
         assertNotNull("Model is null", base.getFactType(SampleData.PKG_NAME, "RecordIn")); //$NON-NLS-1$ //$NON-NLS-2$
 
         assertNotNull(base.getRule(SampleData.PKG_NAME, SampleData.RULES[0].getRuleName()));
@@ -1326,9 +1326,9 @@ public class SurvivorshipManagerTest {
         Map<String, Object> survivorMap = manager.getSurvivorMap();
         SoftReference<HashMap<String, List<Integer>>> conflictDataMap = manager.getDataSet().getConflictDataMap();
         List<Integer> indexs = new ArrayList<Integer>();
-        indexs.add(0);
-        indexs.add(1);
         indexs.add(3);
+        indexs.add(1);
+        indexs.add(0);
         assertEquals(indexs, conflictDataMap.get().get("city1"));
         assertEquals(1, survivorMap.size());
         assertEquals("beijing", survivorMap.get("city1"));

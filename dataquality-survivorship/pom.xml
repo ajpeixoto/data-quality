@@ -11,18 +11,31 @@
 	<packaging>bundle</packaging>
 	<name>dataquality-survivorship</name>
 	<description>Data Survivorship runtime API based on Drools</description>
-
+	
+	<properties>
+	    <drools.version>7.73.0.Final</drools.version>
+    </properties>
+    
 	<dependencies>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-core</artifactId>
-			<version>6.2.0.Final</version>
+			<version>${drools.version}</version>
 		</dependency>
-
-		<dependency>
+		   <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <version>${drools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-internal</artifactId>
+            <version>${drools.version}</version>
+        </dependency>
+        <dependency>
 			<groupId>org.jbpm</groupId>
 			<artifactId>jbpm-bpmn2</artifactId>
-			<version>6.2.0.Final</version>
+			<version>${drools.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.thoughtworks.xstream</groupId>
@@ -30,7 +43,106 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		<!-- drools for junit -->
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+            <artifactId>drools-core-dynamic</artifactId>
+            <version>${drools.version}</version>
+            <scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-mvel</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core-reflective</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+     
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-dmn-feel</artifactId>
+            <version>${drools.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.kie.soup</groupId>
+            <artifactId>kie-soup-maven-support</artifactId>
+            <version>${drools.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+			<groupId>org.kie.soup</groupId>
+			<artifactId>kie-soup-project-datamodel-commons</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-memory-compiler</artifactId>
+            <version>${drools.version}</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow-builder</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+	    </dependency>
+	    <dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+	    </dependency>
+	    <dependency>
+			<groupId>org.mvel</groupId>
+			<artifactId>mvel2</artifactId>
+			<version>2.4.14.Final</version>
+			<scope>test</scope>
+	    </dependency>
+	     <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <version>3.5.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- End drools for junit -->
+		
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
