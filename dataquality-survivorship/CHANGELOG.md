@@ -4,19 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
+## [9.1.7] - 2022-08-11
 ### Changed
-- fix(TDQ-20485): Upgrade drools to 7.73.0
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
-### Security
-N/A
+- fix([TDQ-20485](https://jira.talendforge.org/browse/TDQ-20485)): Upgrade drools to 7.73.0
 
 ## [9.1.6] - 2022-07-14
 

@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.7] - 2022-08-11
+### Changed
+- chore([TDQ-20569](https://jira.talendforge.org/browse/TDQ-20569)): upgrade daikon to 6.8.7 [dataquality-common]
+- chore([TDQ-20569](https://jira.talendforge.org/browse/TDQ-20569)): upgrade daikon to 6.8.7 [dataquality-statistics]
+- fix([TDQ-20485](https://jira.talendforge.org/browse/TDQ-20485)): Upgrade drools to 7.73.0 [dataquality-survivorship]
+### Security
+- fix([TDQ-20580](https://jira.talendforge.org/browse/TDQ-20580)): Fix Apache Commons Configuration (to 2.8.0) [dataquality-common]
+- fix([TDQ-20580](https://jira.talendforge.org/browse/TDQ-20580)): Fix Apache Commons Configuration (to 2.8.0) [dataquality-statistics]
+
 ## [9.1.6] - 2022-07-14
 ### Security
 - fix([TDQ-20481](https://jira.talendforge.org/browse/TDQ-20481)): upgrade daikon to 6.8.2 [dataquality-common]
