@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- chore(TDQ-20569): upgrade daikon to 6.8.7
 ### Removed
 N/A
 ### Deprecated

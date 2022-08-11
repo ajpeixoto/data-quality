@@ -68,7 +68,7 @@ public class ReleaseVersionBumper {
 
     private static final String TARGET_VERSION = "9.1.7-SNAPSHOT";
 
-    private static final String TARGET_DAIKON_VERSION = "6.8.2";
+    private static final String TARGET_DAIKON_VERSION = "6.8.7";
 
     private static final String DAIKON_VERSION_PROPERTY_NAME = "org.talend.daikon.version";
 
