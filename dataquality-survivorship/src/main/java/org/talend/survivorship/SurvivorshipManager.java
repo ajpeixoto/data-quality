@@ -20,17 +20,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+import org.drools.core.impl.InternalKnowledgeBase;
+import org.drools.core.impl.KnowledgeBaseFactory;
 import org.kie.api.definition.type.FactType;
 import org.kie.api.io.Resource;
 import org.kie.api.io.ResourceType;
-import org.kie.internal.KnowledgeBase;
-import org.kie.internal.KnowledgeBaseFactory;
+import org.kie.api.runtime.KieSession;
 import org.kie.internal.builder.KnowledgeBuilder;
 import org.kie.internal.builder.KnowledgeBuilderError;
 import org.kie.internal.builder.KnowledgeBuilderErrors;
 import org.kie.internal.builder.KnowledgeBuilderFactory;
 import org.kie.internal.io.ResourceFactory;
-import org.kie.internal.runtime.StatefulKnowledgeSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.talend.survivorship.action.handler.AbstractChainOfResponsibilityHandler;
@@ -66,7 +66,7 @@ public class SurvivorshipManager extends KnowledgeManager {
     /**
      * Base of executable knowledge.
      */
-    protected KnowledgeBase kbase;
+    protected InternalKnowledgeBase kbase;
 
     /**
      * collection of data and informations.
@@ -92,7 +92,7 @@ public class SurvivorshipManager extends KnowledgeManager {
      * 
      * @return the kbase
      */
-    public KnowledgeBase getKnowledgeBase() {
+    public InternalKnowledgeBase getKnowledgeBase() {
         return kbase;
     }
 
@@ -172,7 +172,7 @@ public class SurvivorshipManager extends KnowledgeManager {
             throw new IllegalArgumentException("Could not parse knowledge."); //$NON-NLS-1$
         }
         kbase = KnowledgeBaseFactory.newKnowledgeBase();
-        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+        kbase.addPackages(kbuilder.getKnowledgePackages());
 
         dataset = new DataSet(columnList);
     }
@@ -221,7 +221,7 @@ public class SurvivorshipManager extends KnowledgeManager {
             throw new IllegalArgumentException("Could not parse knowledge."); //$NON-NLS-1$
         }
         kbase = KnowledgeBaseFactory.newKnowledgeBase();
-        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+        kbase.addPackages(kbuilder.getKnowledgePackages());
 
         dataset = new DataSet(columnList);
     }
@@ -285,7 +285,7 @@ public class SurvivorshipManager extends KnowledgeManager {
      */
     public boolean runSession(Object[][] data) {
 
-        StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+        KieSession ksession = kbase.newKieSession();
         dataset.reset();
         dataset.initData(data);
         ksession.setGlobal("dataset", dataset); //$NON-NLS-1$
@@ -316,7 +316,6 @@ public class SurvivorshipManager extends KnowledgeManager {
         ksession.startProcess(packageName + "." + SurvivorshipConstants.SURVIVOR_FLOW); //$NON-NLS-1$
         ksession.fireAllRules();
         ksession.dispose();
-        kbase.getStatefulKnowledgeSessions().clear();
 
         dataset.finalizeComputation();
         return true;
