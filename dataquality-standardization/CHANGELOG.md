@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20633): upgrade 'lucene-core' to 8.11.2
 
 ## [8.0.23] - 2022-09-01
 
