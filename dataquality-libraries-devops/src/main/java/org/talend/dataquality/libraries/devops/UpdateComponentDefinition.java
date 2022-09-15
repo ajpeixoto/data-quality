@@ -78,7 +78,6 @@ public class UpdateComponentDefinition {
 
         // for tDataQualityRules component
         DEP_VERSION_MAP.put("org.talend.dataquality.phone", DQ_LIB_VERSION); //$NON-NLS-1$
-        DEP_VERSION_MAP.put("org.talend.dataquality.semantic", DQ_LIB_VERSION); //$NON-NLS-1$
     }
 
     private UpdateComponentDefinition() {
