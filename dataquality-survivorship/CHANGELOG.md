@@ -10,7 +10,7 @@ N/A
 ### Changed
 N/A
 ### Removed
-N/A
+- fix(TDQ-20754): remove XStream Core dependency
 ### Deprecated
 N/A
 ### Fixed
