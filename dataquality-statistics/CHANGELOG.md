@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20772): Fix jackson-databind issues (to 2.14.0-rc2)
 
 ## [9.1.9] - 2022-10-13
 
