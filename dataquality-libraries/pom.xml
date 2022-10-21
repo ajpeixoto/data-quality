@@ -24,6 +24,7 @@
 		<mockito.version>2.23.4</mockito.version>
 		<powermock.version>2.0.2</powermock.version>
 		<re2j.version>1.2</re2j.version>
+		<commons-text.version>1.10.0</commons-text.version>
 		<org.talend.daikon.version>6.8.7</org.talend.daikon.version>
 		<commons-codec.version>1.14</commons-codec.version>
 <!--adapt for the version using in studio-->
@@ -90,6 +91,11 @@
 				<artifactId>commons-configuration2</artifactId>
 				<version>2.8.0</version>
 			</dependency>
+			<dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>com.google.protobuf</groupId>
 				<artifactId>protobuf-java</artifactId>
