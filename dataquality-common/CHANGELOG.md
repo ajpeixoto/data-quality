@@ -17,6 +17,7 @@ N/A
 N/A
 ### Security
 - fix(TDQ-20792): Fix all jackson jar(to 2.13.4)
+- fix(TDQ-20799): Fix org.apache.commons:commons-text:1.8,1.9(to 1.10.0)
 
 ## [8.0.24] - 2022-09-29
 
