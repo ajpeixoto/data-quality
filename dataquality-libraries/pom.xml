@@ -26,8 +26,8 @@
 		<re2j.version>1.2</re2j.version>
 		<org.talend.daikon.version>1.16.3</org.talend.daikon.version>
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-		<jackson.version>2.13.2</jackson.version>
-		<jackson-databind.version>2.13.2.2</jackson-databind.version>
+		<jackson.version>2.13.4</jackson.version>
+		<jackson-databind.version>2.13.4.2</jackson-databind.version>
 	</properties>
 
 	<modules>

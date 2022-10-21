@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20792): Fix all jackson jar(to 2.13.4)
 
 ## [8.0.24] - 2022-09-29
 
