@@ -18,6 +18,7 @@ N/A
 ### Security
 - fix(TDQ-20792): Fix all jackson jar(to 2.13.4)
 - fix(TDQ-20798): Fix com.google.protobuf:protobuf-java:3.19.2(to 3.19.6)
+- fix(TDQ-20772): Fix jackson-databind issues (to 2.14.0-rc2)
 
 ## [8.0.24] - 2022-09-29
 ### Removed
