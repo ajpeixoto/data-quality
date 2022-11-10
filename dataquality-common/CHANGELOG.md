@@ -4,21 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
-### Changed
-N/A
-### Removed
-N/A
-### Deprecated
-N/A
-### Fixed
-N/A
+## [9.1.10] - 2022-11-10
 ### Security
-- fix(TDQ-20772): Fix jackson-databind issues (to 2.14.0-rc2)
-- fix(TDQ-20792): Fix all jackson jar(to 2.13.4)
-- fix(TDQ-20799): Fix org.apache.commons:commons-text:1.8,1.9(to 1.10.0)
+- fix([TDQ-20772](https://jira.talendforge.org/browse/TDQ-20772)): Fix jackson-databind issues (to 2.14.0-rc2)
+- fix([TDQ-20792](https://jira.talendforge.org/browse/TDQ-20792)): Fix all jackson jar(to 2.13.4)
+- fix([TDQ-20799](https://jira.talendforge.org/browse/TDQ-20799)): Fix org.apache.commons:commons-text:1.8,1.9(to 1.10.0)
 
 ## [9.1.9] - 2022-10-13
 
