@@ -56,19 +56,30 @@ public class TextTransliterator {
     }
 
     public String transliterate(String text, TransliterateType type) {
-        return transliterate(text, type, " "); //$NON-NLS-1$
+        return transliterate(text, type, " ", false); //$NON-NLS-1$
+    }
+
+    public String transliterate(String text, TransliterateType type, Boolean isSkipTokenizing) {
+        return transliterate(text, type, " ", isSkipTokenizing); //$NON-NLS-1$
     }
 
     public String transliterate(String text, TransliterateType type, String delimiter) {
-        return convert(text, type).collect(Collectors.joining(delimiter));
+        return convert(text, type, false).collect(Collectors.joining(delimiter));
     }
 
-    private Stream<String> convert(String text, TransliterateType type) {
+    public String transliterate(String text, TransliterateType type, String delimiter, Boolean isSkipTokenizing) {
+        return convert(text, type, isSkipTokenizing).collect(Collectors.joining(delimiter));
+    }
+
+    private Stream<String> convert(String text, TransliterateType type, Boolean isSkipTokenizing) {
         if (type.equals(TransliterateType.KATAKANA_READING) || type.equals(TransliterateType.HIRAGANA)) {
             // if output type is KATAKANA_READING or HIRAGANA
             final Stream<String> katakanaRStream = convert2Katakana(text, false);
             if (type.equals(TransliterateType.KATAKANA_READING)) {
                 return katakanaRStream;
+            }
+            if (isSkipTokenizing) {
+                return KatakanaToHiragana.convert(Stream.of(text));
             }
             return KatakanaToHiragana.convert(katakanaRStream);
             // Katakana reading
@@ -78,6 +89,9 @@ public class TextTransliterator {
             final Stream<String> katakanaPStream = convert2Katakana(text, true);
             if (type.equals(TransliterateType.KATAKANA_PRONUNCIATION)) {
                 return katakanaPStream;
+            }
+            if (isSkipTokenizing) {
+                return KatakanaToRomaji.convert(Stream.of(text), type);
             }
             return KatakanaToRomaji.convert(katakanaPStream, type);
         }

@@ -142,6 +142,14 @@ public class TextTransliteratorTest {
             assertEquals(expectedTextList.get(i), hepburn);
         }
 
+        assertEquals("fujitsuka", transliterator.transliterate("フジツカ", TransliterateType.HEPBURN, true));
+        assertEquals("fukutake", transliterator.transliterate("フクタケ", TransliterateType.HEPBURN, true));
+        assertEquals("haratake", transliterator.transliterate("ハラタケ", TransliterateType.HEPBURN, true));
+
+        assertEquals("fuji tsuka", transliterator.transliterate("フジツカ", TransliterateType.HEPBURN, false));
+        assertEquals("fuku take", transliterator.transliterate("フクタケ", TransliterateType.HEPBURN, false));
+        assertEquals("hara take", transliterator.transliterate("ハラタケ", TransliterateType.HEPBURN, false));
+
     }
 
     @Test
