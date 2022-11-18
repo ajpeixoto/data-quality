@@ -145,6 +145,42 @@ public class TextTransliteratorTest {
     }
 
     @Test
+    public void testAllTransliterate() {
+        // when these three are not equals, that means TDQ-20830 is fixed
+        assertEquals("fuji tsuka", transliterator.transliterate("フジツカ", TransliterateType.HEPBURN));
+        assertEquals("fuku take", transliterator.transliterate("フクタケ", TransliterateType.HEPBURN));
+        assertEquals("hara take", transliterator.transliterate("ハラタケ", TransliterateType.HEPBURN));
+
+        // follows are the result based on the kuromoji-core-0.9.0, kuromoji-ipadic-0.9.0
+        // Hiragana がっこう
+        assertEquals("がっこう", transliterator.transliterate("学校", TransliterateType.HIRAGANA)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("がっ こう", transliterator.transliterate("がっこう", TransliterateType.HIRAGANA)); //$NON-NLS-1$ //$NON-NLS-2$
+        // HEPBURN gakkō
+        assertEquals("gakkō", transliterator.transliterate("学校", TransliterateType.HEPBURN)); //$NON-NLS-1$ //$NON-NLS-2$
+        // KATAKANA_PRONUNCIATION ガッコー
+        assertEquals("ガッコー", transliterator.transliterate("学校", TransliterateType.KATAKANA_PRONUNCIATION)); //$NON-NLS-1$ //$NON-NLS-2$
+        // KATAKANA_READING ガッコウ
+        assertEquals("ガッコウ", transliterator.transliterate("学校", TransliterateType.KATAKANA_READING)); //$NON-NLS-1$ //$NON-NLS-2$
+        // KUNREI_SHIKI gakkô
+        assertEquals("gakkô", transliterator.transliterate("学校", TransliterateType.KUNREI_SHIKI)); //$NON-NLS-1$ //$NON-NLS-2$
+        // HEPBURN gakkō
+        assertEquals("gakkō", transliterator.transliterate("学校", TransliterateType.HEPBURN)); //$NON-NLS-1$ //$NON-NLS-2$
+
+        assertEquals("ぷろじぇくたあ", transliterator.transliterate("プロジェクター", TransliterateType.HIRAGANA)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("ぷろじぇくたあ", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.HIRAGANA)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("プロジェクター", transliterator.transliterate("プロジェクター", TransliterateType.KATAKANA_PRONUNCIATION)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("ﾌﾟﾛｼﾞｪｸﾀｰ", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.KATAKANA_PRONUNCIATION)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("プロジェクター", transliterator.transliterate("プロジェクター", TransliterateType.KATAKANA_READING)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("ﾌﾟﾛｼﾞｪｸﾀｰ", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.KATAKANA_READING)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutâ", transliterator.transliterate("プロジェクター", TransliterateType.KUNREI_SHIKI)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutâ", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.KUNREI_SHIKI)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutā", transliterator.transliterate("プロジェクター", TransliterateType.HEPBURN)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutā", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.HEPBURN)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutâ", transliterator.transliterate("プロジェクター", TransliterateType.NIHON_SHIKI)); //$NON-NLS-1$ //$NON-NLS-2$
+        assertEquals("purojiekutâ", transliterator.transliterate("ﾌﾟﾛｼﾞｪｸﾀｰ", TransliterateType.NIHON_SHIKI)); //$NON-NLS-1$ //$NON-NLS-2$
+    }
+
+    @Test
     public void testTransliterateKunreiShiki() {
         List<String> expectedTextList = new ArrayList<>();
         expectedTextList.add("oyayuzuri no muteppô de syô kyô no toki kara son bakari si te iru");
