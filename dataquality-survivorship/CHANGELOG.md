@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+- fix(TDQ-20834): Fix SmallestAction not work issue
 ### Security
 N/A
 
