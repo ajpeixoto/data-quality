@@ -25,11 +25,10 @@ public class SmallestAction extends AbstractSurvivorshipAction {
      */
     @Override
     public boolean canHandle(ActionParameter actionParameter) {
-        if (!(actionParameter.getInputData() instanceof String)) {
+        if (!(actionParameter.getInputData() instanceof Number)) {
             return false;
         }
-        return actionParameter.getDataset().isShortest(actionParameter.getInputData(), actionParameter.getColumn(),
-                actionParameter.isIgnoreBlanks());
+        return actionParameter.getDataset().isSmallest(actionParameter.getInputData(), actionParameter.getColumn());
     }
 
 }
