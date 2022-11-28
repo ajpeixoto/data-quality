@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+chore(TDQ-20862): Remove jars from git and download it when build
 ### Removed
 N/A
 ### Deprecated
