@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20851): Upgrade slf4j to 1.7.34
 
 ## [9.1.10] - 2022-11-10
 ### Security
