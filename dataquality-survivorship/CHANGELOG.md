@@ -4,19 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-N/A
+## [8.0.26] - 2022-12-01
 ### Changed
-chore(TDQ-20862): Remove jars from git and download it when build
-### Removed
-N/A
-### Deprecated
-N/A
+chore([TDQ-20862](https://jira.talendforge.org/browse/TDQ-20862)): Remove jars from git and download it when build
 ### Fixed
-- fix(TDQ-20834): Fix SmallestAction not work issue
-### Security
-N/A
+- fix([TDQ-20834](https://jira.talendforge.org/browse/TDQ-20834)): Fix SmallestAction not work issue
 
 ## [8.0.25] - 2022-10-26
 ### Security
