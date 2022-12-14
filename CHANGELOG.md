@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.11] - 2022-12-14
+### Changed
+chore([TDQ-20862](https://jira.talendforge.org/browse/TDQ-20862)): Remove jars from git and download it when build [dataquality-wordnet]
+chore([TDQ-20862](https://jira.talendforge.org/browse/TDQ-20862)): Remove jars from git and download it when build [dataquality-survivorship]
+chore([TDQ-20862](https://jira.talendforge.org/browse/TDQ-20862)): Remove jars from git and download it when build [dataquality-text-japanese]
+### Fixed
+- fix([TDQ-20834](https://jira.talendforge.org/browse/TDQ-20834)): Fix SmallestAction not work issue [dataquality-survivorship]
+### Security
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-common]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-record-linkage]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-phone]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-sampling]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-standardization]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-statistics]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-wordnet]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-email]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-survivorship]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-converters]
+- fix([TDQ-20851](https://jira.talendforge.org/browse/TDQ-20851)): Upgrade slf4j to 1.7.34 [dataquality-text-japanese]
+
 ## [9.1.10] - 2022-11-10
 ### Security
 - fix([TDQ-20772](https://jira.talendforge.org/browse/TDQ-20772)): Fix jackson-databind issues (to 2.14.0-rc2) [dataquality-common]
