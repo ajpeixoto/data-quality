@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-20585): upgrade daikon to 7.0.5
 
 ## [9.1.11] - 2022-12-14
 ### Security
