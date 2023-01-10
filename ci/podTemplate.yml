@@ -12,6 +12,11 @@ spec:
       volumeMounts:
         - name: m2
           mountPath: /root/.m2/repository
+    - name: talend-tsbi-springboot-builder
+      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk11-svc-springboot-builder:3.0.0-2.6-20220719061045
+      command:
+        - cat
+      tty: true
   volumes:
     - name: m2
       hostPath:
