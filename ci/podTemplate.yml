@@ -12,18 +12,18 @@ spec:
       volumeMounts:
         - name: m2
           mountPath: /root/.m2/repository
-    - name: sonar-scanner
-      image: artifactory.datapwn.com/docker-io-remote/sonarsource/sonar-scanner-cli
+    - name: talend-tsbi-springboot-builder
+      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk11-svc-springboot-builder:3.0.0-2.6-20220719061045
       command:
         - cat
       tty: true
       resources:
         requests:
-          memory: "1G"
-          cpu: "1"
-        limits:
           memory: "2G"
           cpu: "1"
+        limits:
+          memory: "4G"
+          cpu: "2"
   volumes:
     - name: m2
       hostPath:
