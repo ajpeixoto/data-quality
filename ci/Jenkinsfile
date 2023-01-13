@@ -88,18 +88,18 @@ pipeline {
                             if (branchType == 'pull-request') {
                                 SONAR_DASHBOARD_URL = "${SONAR_DASHBOARD_URL}&pullRequest=${env.CHANGE_ID}"
                                 sh """
-                                    mvn $SONAR_OPTS -Dsonar.pullrequest.key=${env.CHANGE_ID} -Dsonar.pullrequest.branch=${env.CHANGE_BRANCH} -Dsonar.pullrequest.base=${env.CHANGE_TARGET} sonar:sonar
+                                    mvn $SONAR_OPTS -Dsonar.pullrequest.key=${env.CHANGE_ID} -Dsonar.pullrequest.branch=${env.CHANGE_BRANCH} -Dsonar.pullrequest.base=${env.CHANGE_TARGET} -Dsonar.analysisCache.enabled=false sonar:sonar
                                 """
                             } else if (branchType == 'maintenance') {
                                 SONAR_DASHBOARD_URL = "${SONAR_DASHBOARD_URL}&branch=${env.BRANCH_NAME}"
                                 date = sh(script: 'date +%Y-%m-%d', returnStdout: true).trim()
                                 sh """
-                                    mvn $SONAR_OPTS -Dsonar.projectVersion=$date.${env.GIT_COMMIT} sonar:sonar
+                                    mvn $SONAR_OPTS -Dsonar.projectVersion=$date.${env.GIT_COMMIT} -Dsonar.analysisCache.enabled=false sonar:sonar
                                 """
                             } else {
                                 SONAR_DASHBOARD_URL = "${SONAR_DASHBOARD_URL}&branch=${env.BRANCH_NAME}"
                                 sh """
-                                    mvn $SONAR_OPTS -Dsonar.branch.name=${env.BRANCH_NAME} sonar:sonar
+                                    mvn $SONAR_OPTS -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.analysisCache.enabled=false sonar:sonar
                                 """
                             }
                             echo "Sonar URL is ${SONAR_DASHBOARD_URL}"

@@ -17,6 +17,9 @@ spec:
       command:
         - cat
       tty: true
+      volumeMounts:
+        - name: m2
+          mountPath: /root/.m2/repository
   volumes:
     - name: m2
       hostPath:
