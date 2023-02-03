@@ -1,5 +1,5 @@
 
-#![alt text](https://www.talend.com/wp-content/uploads/talend_logo_.svg "Talend")
+#![alt text](https://www.talend.com/wp-content/uploads/2016/07/talend-logo.png "Talend")
 # Data Quality Libraries
 
 This repository contains the source files of Talend Data Quality libraries.
