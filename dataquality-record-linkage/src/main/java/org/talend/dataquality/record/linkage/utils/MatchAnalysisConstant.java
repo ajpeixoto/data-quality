@@ -81,7 +81,7 @@ public class MatchAnalysisConstant {
 
     public static final String GID = "GID"; //$NON-NLS-1$
 
-    public static final String MASTER = "MASTER"; //$NON-NLS-1$
+    public static final String PRIMARY = "PRIMARY"; //$NON-NLS-1$
 
     public static final String GRP_SIZE = "GRP_SIZE"; //$NON-NLS-1$
 
