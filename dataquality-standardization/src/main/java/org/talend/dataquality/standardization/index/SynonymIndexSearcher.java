@@ -147,7 +147,7 @@ public class SynonymIndexSearcher {
         }
     }
 
-    SynonymIndexSearcher(Directory indexDir) throws IOException {
+    public SynonymIndexSearcher(Directory indexDir) throws IOException {
         mgr = new SearcherManager(indexDir, null);
     }
 
