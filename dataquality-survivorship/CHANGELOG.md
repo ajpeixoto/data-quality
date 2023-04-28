@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-21093): Unify jackson-databind version 2.13.4.2
 
 ## [9.1.12] - 2023-01-03
 

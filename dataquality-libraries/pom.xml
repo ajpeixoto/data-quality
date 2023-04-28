@@ -27,9 +27,9 @@
 		<commons-text.version>1.10.0</commons-text.version>
 		<org.talend.daikon.version>7.0.5</org.talend.daikon.version>
 		<commons-codec.version>1.14</commons-codec.version>
-<!--adapt for the version using in studio-->
+        <!--adapt for the version using in studio-->
 		<jackson.version>2.13.4</jackson.version>
-		<jackson-databind.version>2.14.0-rc2</jackson-databind.version>
+		<jackson-databind.version>2.13.4.2</jackson-databind.version>
 
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
