@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.13] - 2023-05-11
+### Security
+- fix([TDQ-21093](https://jira.talendforge.org/browse/TDQ-21093)): Unify jackson-databind version 2.13.4.2 [dataquality-common]
+- fix([TDQ-21093](https://jira.talendforge.org/browse/TDQ-21093)): Unify jackson-databind version 2.13.4.2 [dataquality-statistics]
+- fix([TDQ-21093](https://jira.talendforge.org/browse/TDQ-21093)): Unify jackson-databind version 2.13.4.2 [dataquality-survivorship]
+
 ## [9.1.12] - 2023-01-03
 ### Security
 - fix([TDQ-20585](https://jira.talendforge.org/browse/TDQ-20585)): upgrade daikon to 7.0.5 [dataquality-common]
