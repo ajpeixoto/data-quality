@@ -4,10 +4,16 @@ on:
     types: [assigned, opened, synchronize, reopened, labeled, unlabeled]
     branches:
       - master
+      
+permissions:
+  contents: read
+  
 jobs:
   remind:
     name: Changelog Reminder
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
     - uses: actions/checkout@master
     - name: Changelog Reminder
