@@ -1,138 +1,206 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    	
-    <modelVersion>4.0.0</modelVersion>
-    	
-    <parent>
-        		
-        <groupId>org.talend.dataquality</groupId>
-        		
-        <artifactId>dataquality-libraries</artifactId>
-        		
-        <version>17.0.1</version>
-        		
-        <relativePath>../dataquality-libraries</relativePath>
         	
-    </parent>
-    	
-    <artifactId>dataquality-phone</artifactId>
-    	
-    <packaging>bundle</packaging>
-    	
-    <name>dataquality-phone</name>
-    	
-    <description>Phone number validation and formatting tools</description>
-    	
-    <dependencies>
-        		
-        <dependency>
-            			
-            <groupId>org.apache.commons</groupId>
-            			
-            <artifactId>commons-lang3</artifactId>
-            		
-        </dependency>
-        		
-        <!-- When bumping this dependency, make sure to bump the two others below -->
-        		
-        <dependency>
-            			
-            <groupId>com.googlecode.libphonenumber</groupId>
-            			
-            <artifactId>libphonenumber</artifactId>
-            			
-            <version>8.12.38</version>
-            		
-        </dependency>
-        		
-        <dependency>
-            			
-            <groupId>com.googlecode.libphonenumber</groupId>
-            			
-            <artifactId>geocoder</artifactId>
-            			
-            <version>2.174</version>
-            		
-        </dependency>
-        		
-        <dependency>
-            			
-            <groupId>com.googlecode.libphonenumber</groupId>
-            			
-            <artifactId>carrier</artifactId>
-            			
-            <version>1.164</version>
-            		
-        </dependency>
-        		
-        <dependency>
-            			
-            <groupId>junit</groupId>
-            			
-            <artifactId>junit</artifactId>
-            			
-            <scope>test</scope>
-            		
-        </dependency>
-        		
-        <!-- logging stuff -->
-        		
-        <dependency>
-            			
-            <groupId>org.slf4j</groupId>
-            			
-            <artifactId>slf4j-api</artifactId>
-            		
-        </dependency>
-        		
-        <dependency>
-            			
-            <groupId>org.slf4j</groupId>
-            			
-            <artifactId>slf4j-reload4j</artifactId>
-            			
-            <scope>test</scope>
-            		
-        </dependency>
-        		
-        <dependency>
-            			
-            <groupId>org.apache.logging.log4j</groupId>
-            			
-            <artifactId>log4j-core</artifactId>
-            			
-            <scope>test</scope>
-            		
-        </dependency>
-        	
-    </dependencies>
-    	
-    <build>
-        		
-        <plugins>
-            			
-            <plugin>
-                				
-                <groupId>org.apache.felix</groupId>
-                				
-                <artifactId>maven-bundle-plugin</artifactId>
-                				
-                <extensions>true</extensions>
-                				
-                <configuration>
-                    					
-                    <instructions>
-                        						
-                        <Include-Resource>{maven-resources}</Include-Resource>
-                        					
-                    </instructions>
-                    				
-                </configuration>
-                			
-            </plugin>
-            		
-        </plugins>
-        	
-    </build>
     
+    <modelVersion>4.0.0</modelVersion>
+        	
+    
+    <parent>
+                		
+        
+        <groupId>org.talend.dataquality</groupId>
+                		
+        
+        <artifactId>dataquality-libraries</artifactId>
+                		
+        
+        <version>17.0.2-SNAPSHOT</version>
+                		
+        
+        <relativePath>../dataquality-libraries</relativePath>
+                	
+    
+    </parent>
+        	
+    
+    <artifactId>dataquality-phone</artifactId>
+        	
+    
+    <packaging>bundle</packaging>
+        	
+    
+    <name>dataquality-phone</name>
+        	
+    
+    <description>Phone number validation and formatting tools</description>
+        	
+    
+    <dependencies>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>org.apache.commons</groupId>
+                        			
+            
+            <artifactId>commons-lang3</artifactId>
+                        		
+        
+        </dependency>
+                		
+        
+        <!-- When bumping this dependency, make sure to bump the two others below -->
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>com.googlecode.libphonenumber</groupId>
+                        			
+            
+            <artifactId>libphonenumber</artifactId>
+                        			
+            
+            <version>8.12.38</version>
+                        		
+        
+        </dependency>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>com.googlecode.libphonenumber</groupId>
+                        			
+            
+            <artifactId>geocoder</artifactId>
+                        			
+            
+            <version>2.174</version>
+                        		
+        
+        </dependency>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>com.googlecode.libphonenumber</groupId>
+                        			
+            
+            <artifactId>carrier</artifactId>
+                        			
+            
+            <version>1.164</version>
+                        		
+        
+        </dependency>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>junit</groupId>
+                        			
+            
+            <artifactId>junit</artifactId>
+                        			
+            
+            <scope>test</scope>
+                        		
+        
+        </dependency>
+                		
+        
+        <!-- logging stuff -->
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>org.slf4j</groupId>
+                        			
+            
+            <artifactId>slf4j-api</artifactId>
+                        		
+        
+        </dependency>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>org.slf4j</groupId>
+                        			
+            
+            <artifactId>slf4j-reload4j</artifactId>
+                        			
+            
+            <scope>test</scope>
+                        		
+        
+        </dependency>
+                		
+        
+        <dependency>
+                        			
+            
+            <groupId>org.apache.logging.log4j</groupId>
+                        			
+            
+            <artifactId>log4j-core</artifactId>
+                        			
+            
+            <scope>test</scope>
+                        		
+        
+        </dependency>
+                	
+    
+    </dependencies>
+        	
+    
+    <build>
+                		
+        
+        <plugins>
+                        			
+            
+            <plugin>
+                                				
+                
+                <groupId>org.apache.felix</groupId>
+                                				
+                
+                <artifactId>maven-bundle-plugin</artifactId>
+                                				
+                
+                <extensions>true</extensions>
+                                				
+                
+                <configuration>
+                                        					
+                    
+                    <instructions>
+                                                						
+                        
+                        <Include-Resource>{maven-resources}</Include-Resource>
+                                                					
+                    
+                    </instructions>
+                                        				
+                
+                </configuration>
+                                			
+            
+            </plugin>
+                        		
+        
+        </plugins>
+                	
+    
+    </build>
+        
+
 </project>
