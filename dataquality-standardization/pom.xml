@@ -1,116 +1,204 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.talend.dataquality</groupId>
-		<artifactId>dataquality-libraries</artifactId>
-		<version>17.0.1-SNAPSHOT</version>
-		<relativePath>../dataquality-libraries</relativePath>
-	</parent>
-	<artifactId>dataquality-standardization</artifactId>
-	<packaging>bundle</packaging>
-	<name>dataquality-standardization</name>
-	<description>Standardization library based on Apache Lucene</description>
-
-	<properties>
-		<lucene.version>8.11.2</lucene.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-backward-codecs</artifactId>
-			<version>${lucene.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers-common</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queryparser</artifactId>
-			<version>${lucene.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-junit4</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-mockito2</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.mockito</groupId>
-					<artifactId>mockito-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- logging stuff -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-reload4j</artifactId>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Include-Resource>{maven-resources},CHANGELOG.md,src/main/resources/messages.properties</Include-Resource>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    	
+    <modelVersion>4.0.0</modelVersion>
+    	
+    <parent>
+        		
+        <groupId>org.talend.dataquality</groupId>
+        		
+        <artifactId>dataquality-libraries</artifactId>
+        		
+        <version>17.0.1</version>
+        		
+        <relativePath>../dataquality-libraries</relativePath>
+        	
+    </parent>
+    	
+    <artifactId>dataquality-standardization</artifactId>
+    	
+    <packaging>bundle</packaging>
+    	
+    <name>dataquality-standardization</name>
+    	
+    <description>Standardization library based on Apache Lucene</description>
+    	
+    <properties>
+        		
+        <lucene.version>8.11.2</lucene.version>
+        	
+    </properties>
+    	
+    <dependencies>
+        		
+        <dependency>
+            			
+            <groupId>org.apache.lucene</groupId>
+            			
+            <artifactId>lucene-core</artifactId>
+            			
+            <version>${lucene.version}</version>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.apache.lucene</groupId>
+            			
+            <artifactId>lucene-backward-codecs</artifactId>
+            			
+            <version>${lucene.version}</version>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.apache.lucene</groupId>
+            			
+            <artifactId>lucene-analyzers-common</artifactId>
+            			
+            <version>${lucene.version}</version>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.apache.lucene</groupId>
+            			
+            <artifactId>lucene-queryparser</artifactId>
+            			
+            <version>${lucene.version}</version>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>commons-lang</groupId>
+            			
+            <artifactId>commons-lang</artifactId>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>junit</groupId>
+            			
+            <artifactId>junit</artifactId>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.mockito</groupId>
+            			
+            <artifactId>mockito-core</artifactId>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.powermock</groupId>
+            			
+            <artifactId>powermock-module-junit4</artifactId>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.powermock</groupId>
+            			
+            <artifactId>powermock-api-mockito2</artifactId>
+            			
+            <scope>test</scope>
+            			
+            <exclusions>
+                				
+                <exclusion>
+                    					
+                    <groupId>org.mockito</groupId>
+                    					
+                    <artifactId>mockito-core</artifactId>
+                    				
+                </exclusion>
+                			
+            </exclusions>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>commons-io</groupId>
+            			
+            <artifactId>commons-io</artifactId>
+            			
+            <scope>test</scope>
+            		
+        </dependency>
+        		
+        <!-- logging stuff -->
+        		
+        <dependency>
+            			
+            <groupId>org.apache.logging.log4j</groupId>
+            			
+            <artifactId>log4j-core</artifactId>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.slf4j</groupId>
+            			
+            <artifactId>slf4j-api</artifactId>
+            		
+        </dependency>
+        		
+        <dependency>
+            			
+            <groupId>org.slf4j</groupId>
+            			
+            <artifactId>slf4j-reload4j</artifactId>
+            		
+        </dependency>
+        	
+    </dependencies>
+    	
+    <build>
+        		
+        <plugins>
+            			
+            <plugin>
+                				
+                <groupId>org.apache.felix</groupId>
+                				
+                <artifactId>maven-bundle-plugin</artifactId>
+                				
+                <extensions>true</extensions>
+                				
+                <configuration>
+                    					
+                    <instructions>
+                        						
+                        <Include-Resource>{maven-resources},CHANGELOG.md,src/main/resources/messages.properties</Include-Resource>
+                        					
+                    </instructions>
+                    				
+                </configuration>
+                			
+            </plugin>
+            		
+        </plugins>
+        	
+    </build>
+    
 </project>

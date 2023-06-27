@@ -1,394 +1,752 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.talend.dataquality</groupId>
-		<artifactId>dataquality-parent</artifactId>
-		<version>17.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath>
-	</parent>
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>dataquality-libraries</artifactId>
-	<version>17.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>dataquality-libraries</name>
-	<description>Parent pom aggregating other library projects, devops tools</description>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<slf4j.version>1.7.34</slf4j.version>
-		<log4j.version>2.17.1</log4j.version>
-		<java.version>17</java.version>
-		<assertj.version>3.0.0</assertj.version>
-		<junit.version>4.13.2</junit.version>
-		<mockito.version>2.23.4</mockito.version>
-		<powermock.version>2.0.9</powermock.version>
-		<re2j.version>1.2</re2j.version>
-		<commons-text.version>1.10.0</commons-text.version>
-		<org.talend.daikon.version>7.0.5</org.talend.daikon.version>
-		<commons-codec.version>1.14</commons-codec.version>
+    	
+    <parent>
+        		
+        <groupId>org.talend.dataquality</groupId>
+        		
+        <artifactId>dataquality-parent</artifactId>
+        		
+        <version>17.0.1</version>
+        		
+        <relativePath>..</relativePath>
+        	
+    </parent>
+    	
+    <modelVersion>4.0.0</modelVersion>
+    	
+    <artifactId>dataquality-libraries</artifactId>
+    	
+    <version>17.0.1</version>
+    	
+    <packaging>pom</packaging>
+    	
+    <name>dataquality-libraries</name>
+    	
+    <description>Parent pom aggregating other library projects, devops tools</description>
+    	
+    <properties>
+        		
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        		
+        <slf4j.version>1.7.34</slf4j.version>
+        		
+        <log4j.version>2.17.1</log4j.version>
+        		
+        <java.version>17</java.version>
+        		
+        <assertj.version>3.0.0</assertj.version>
+        		
+        <junit.version>4.13.2</junit.version>
+        		
+        <mockito.version>2.23.4</mockito.version>
+        		
+        <powermock.version>2.0.9</powermock.version>
+        		
+        <re2j.version>1.2</re2j.version>
+        		
+        <commons-text.version>1.10.0</commons-text.version>
+        		
+        <org.talend.daikon.version>7.0.5</org.talend.daikon.version>
+        		
+        <commons-codec.version>1.14</commons-codec.version>
+                
         <!--adapt for the version using in studio-->
-		<jackson.version>2.13.4</jackson.version>
-		<jackson-databind.version>2.13.4.2</jackson-databind.version>
-
-		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-	</properties>
-
-	<modules>
-		<module>../dataquality-libraries-devops</module>
-		<module>../dataquality-common</module>
-		<module>../dataquality-record-linkage</module>
-		<module>../dataquality-phone</module>
-		<module>../dataquality-sampling</module>
-		<module>../dataquality-standardization</module>
-		<module>../dataquality-statistics</module>
-		<module>../dataquality-wordnet</module>
-		<module>../dataquality-email</module>
-		<module>../dataquality-survivorship</module>
-		<module>../dataquality-converters</module>
-		<module>../dataquality-text-japanese</module>
-	</modules>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.talend.daikon</groupId>
-				<artifactId>daikon</artifactId>
-				<version>${org.talend.daikon.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${commons-codec.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>2.8.0</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>2.6</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.8</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-collections</groupId>
-				<artifactId>commons-collections</artifactId>
-				<version>3.2.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-math3</artifactId>
-				<version>3.5</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-configuration2</artifactId>
-				<version>2.8.0</version>
-			</dependency>
-			<dependency>
+        		
+        <jackson.version>2.13.4</jackson.version>
+        		
+        <jackson-databind.version>2.13.4.2</jackson-databind.version>
+        		
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+        	
+    </properties>
+    	
+    <modules>
+        		
+        <module>../dataquality-libraries-devops</module>
+        		
+        <module>../dataquality-common</module>
+        		
+        <module>../dataquality-record-linkage</module>
+        		
+        <module>../dataquality-phone</module>
+        		
+        <module>../dataquality-sampling</module>
+        		
+        <module>../dataquality-standardization</module>
+        		
+        <module>../dataquality-statistics</module>
+        		
+        <module>../dataquality-wordnet</module>
+        		
+        <module>../dataquality-email</module>
+        		
+        <module>../dataquality-survivorship</module>
+        		
+        <module>../dataquality-converters</module>
+        		
+        <module>../dataquality-text-japanese</module>
+        	
+    </modules>
+    	
+    <dependencyManagement>
+        		
+        <dependencies>
+            			
+            <dependency>
+                				
+                <groupId>org.talend.daikon</groupId>
+                				
+                <artifactId>daikon</artifactId>
+                				
+                <version>${org.talend.daikon.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>commons-codec</groupId>
+                				
+                <artifactId>commons-codec</artifactId>
+                				
+                <version>${commons-codec.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>commons-io</groupId>
+                				
+                <artifactId>commons-io</artifactId>
+                				
+                <version>2.8.0</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>commons-lang</groupId>
+                				
+                <artifactId>commons-lang</artifactId>
+                				
+                <version>2.6</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
                 <groupId>org.apache.commons</groupId>
+                				
+                <artifactId>commons-lang3</artifactId>
+                				
+                <version>3.8</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>commons-collections</groupId>
+                				
+                <artifactId>commons-collections</artifactId>
+                				
+                <version>3.2.2</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.apache.commons</groupId>
+                				
+                <artifactId>commons-math3</artifactId>
+                				
+                <version>3.5</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.apache.commons</groupId>
+                				
+                <artifactId>commons-configuration2</artifactId>
+                				
+                <version>2.8.0</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                                
+                <groupId>org.apache.commons</groupId>
+                                
                 <artifactId>commons-text</artifactId>
+                                
                 <version>${commons-text.version}</version>
+                            
             </dependency>
-			<dependency>
-				<groupId>com.google.protobuf</groupId>
-				<artifactId>protobuf-java</artifactId>
-				<version>3.19.6</version>
-			</dependency>
-			<!-- Jackson -->
-			<dependency>
+            			
+            <dependency>
+                				
+                <groupId>com.google.protobuf</groupId>
+                				
+                <artifactId>protobuf-java</artifactId>
+                				
+                <version>3.19.6</version>
+                			
+            </dependency>
+            			
+            <!-- Jackson -->
+            			
+            <dependency>
+                                
                 <groupId>com.fasterxml.jackson.core</groupId>
+                                
                 <artifactId>jackson-databind</artifactId>
+                                
                 <version>${jackson-databind.version}</version>
+                            
             </dependency>
+                        
             <dependency>
+                                
                 <groupId>com.fasterxml.jackson.core</groupId>
+                                
                 <artifactId>jackson-core</artifactId>
+                                
                 <version>${jackson.version}</version>
+                            
             </dependency>
+                        
             <dependency>
+                                
                 <groupId>com.fasterxml.jackson.core</groupId>
+                                
                 <artifactId>jackson-annotations</artifactId>
+                                
                 <version>${jackson.version}</version>
+                            
             </dependency>
-
-			<!-- logging stuff -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-reload4j</artifactId>
-				<version>${slf4j.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-core</artifactId>
-				<version>${log4j.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<!-- UNIT TEST DEPENDENCIES -->
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>uk.co.datumedge</groupId>
-				<artifactId>hamcrest-json</artifactId>
-				<version>0.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.assertj</groupId>
-				<artifactId>assertj-core</artifactId>
-				<version>${assertj.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mockito</groupId>
-				<artifactId>mockito-core</artifactId>
-				<version>${mockito.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.powermock</groupId>
-				<artifactId>powermock-module-junit4</artifactId>
-				<version>${powermock.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.powermock</groupId>
-				<artifactId>powermock-api-mockito2</artifactId>
-				<version>${powermock.version}</version>
-				<scope>test</scope>
-				<exclusions>
-					<exclusion>
-						<groupId>org.mockito</groupId>
-						<artifactId>mockito-core</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>2.6.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.3</version>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.2</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-dependency-plugin</artifactId>
-					<version>2.10</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.2.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>2.5.2</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.7</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.felix</groupId>
-					<artifactId>maven-bundle-plugin</artifactId>
-					<version>3.5.0</version>
-					<inherited>true</inherited>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M3</version>
-					<configuration>
-						<systemPropertyVariables>
-							<java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-						</systemPropertyVariables>
-						<argLine>@{argLine} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.7</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>prepare-agent</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<destFile>${sonar.jacoco.reportPath}</destFile>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
-		<plugins>
-			<plugin>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-build-plugin</artifactId>
-				<version>1.5</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<archive>
-						<addMavenDescriptor>false</addMavenDescriptor>
-					</archive>
-					<instructions>
-						<_nouses>true</_nouses>
-						<_noee>true</_noee>
-						<_removeheaders>JAVA_1_5_HOME,JAVA_1_6_HOME,JAVA_1_7_HOME,JAVA_1_8_HOME</_removeheaders>
-						<_include>META-INF/MANIFEST.MF</_include>
-						<Built-By>.Talend SA.</Built-By>
-						<Import-Package/>
-						<Private-Package/>
-						<Include-Resource>{maven-resources},CHANGELOG.md,LICENSE.txt</Include-Resource>
-					</instructions>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>net.revelc.code.formatter</groupId>
-				<artifactId>formatter-maven-plugin</artifactId>
-				<version>2.0.1</version>
-				<configuration>
-					<configFile>talend_java_eclipse_formatter.xml</configFile>
-					<lineEnding>LF</lineEnding>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.talend.tools</groupId>
-						<artifactId>java-formatter</artifactId>
-						<version>0.2.0</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-		</plugins>
-	</build>
-
-	<profiles>
-		<profile>
-			<id>default</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-				<property>
-					<name>!format</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>net.revelc.code.formatter</groupId>
-						<artifactId>formatter-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>validate</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>format</id>
-			<activation>
-				<property>
-					<name>format</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>net.revelc.code.formatter</groupId>
-						<artifactId>formatter-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>format</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>talend-opensource-snapshot</id>
-			<name>talend-opensource-snapshot</name>
-			<url>https://artifacts-oss.talend.com/nexus/content/repositories/TalendOpenSourceSnapshot/</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>talend-opensource-release</id>
-			<name>talend-opensource-release</name>
-			<url>https://artifacts-oss.talend.com/nexus/content/repositories/TalendOpenSourceRelease/</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>public-maven</id>
-			<url>https://artifacts-zl.talend.com/nexus/content/groups/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
+            			
+            <!-- logging stuff -->
+            			
+            <dependency>
+                				
+                <groupId>org.slf4j</groupId>
+                				
+                <artifactId>slf4j-api</artifactId>
+                				
+                <version>${slf4j.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.slf4j</groupId>
+                				
+                <artifactId>slf4j-reload4j</artifactId>
+                				
+                <version>${slf4j.version}</version>
+                				
+                <scope>test</scope>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.apache.logging.log4j</groupId>
+                				
+                <artifactId>log4j-core</artifactId>
+                				
+                <version>${log4j.version}</version>
+                				
+                <scope>test</scope>
+                			
+            </dependency>
+            			
+            <!-- UNIT TEST DEPENDENCIES -->
+            			
+            <dependency>
+                				
+                <groupId>junit</groupId>
+                				
+                <artifactId>junit</artifactId>
+                				
+                <version>${junit.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>uk.co.datumedge</groupId>
+                				
+                <artifactId>hamcrest-json</artifactId>
+                				
+                <version>0.2</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.assertj</groupId>
+                				
+                <artifactId>assertj-core</artifactId>
+                				
+                <version>${assertj.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.mockito</groupId>
+                				
+                <artifactId>mockito-core</artifactId>
+                				
+                <version>${mockito.version}</version>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.powermock</groupId>
+                				
+                <artifactId>powermock-module-junit4</artifactId>
+                				
+                <version>${powermock.version}</version>
+                				
+                <scope>test</scope>
+                			
+            </dependency>
+            			
+            <dependency>
+                				
+                <groupId>org.powermock</groupId>
+                				
+                <artifactId>powermock-api-mockito2</artifactId>
+                				
+                <version>${powermock.version}</version>
+                				
+                <scope>test</scope>
+                				
+                <exclusions>
+                    					
+                    <exclusion>
+                        						
+                        <groupId>org.mockito</groupId>
+                        						
+                        <artifactId>mockito-core</artifactId>
+                        					
+                    </exclusion>
+                    				
+                </exclusions>
+                			
+            </dependency>
+            		
+        </dependencies>
+        	
+    </dependencyManagement>
+    	
+    <build>
+        		
+        <pluginManagement>
+            			
+            <plugins>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-clean-plugin</artifactId>
+                    					
+                    <version>2.6.1</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    					
+                    <version>3.3</version>
+                    					
+                    <configuration>
+                        						
+                        <source>${java.version}</source>
+                        						
+                        <target>${java.version}</target>
+                        					
+                    </configuration>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    					
+                    <version>2.8.2</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    					
+                    <version>2.10</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-jar-plugin</artifactId>
+                    					
+                    <version>3.2.0</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-install-plugin</artifactId>
+                    					
+                    <version>2.5.2</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-resources-plugin</artifactId>
+                    					
+                    <version>2.7</version>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.felix</groupId>
+                    					
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    					
+                    <version>3.5.0</version>
+                    					
+                    <inherited>true</inherited>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.apache.maven.plugins</groupId>
+                    					
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    					
+                    <version>3.0.0-M3</version>
+                    					
+                    <configuration>
+                        						
+                        <systemPropertyVariables>
+                            							
+                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                            						
+                        </systemPropertyVariables>
+                        						
+                        <argLine>@{argLine} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
+                        					
+                    </configuration>
+                    				
+                </plugin>
+                				
+                <plugin>
+                    					
+                    <groupId>org.jacoco</groupId>
+                    					
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    					
+                    <version>0.8.7</version>
+                    					
+                    <executions>
+                        						
+                        <execution>
+                            							
+                            <goals>
+                                								
+                                <goal>prepare-agent</goal>
+                                							
+                            </goals>
+                            						
+                        </execution>
+                        					
+                    </executions>
+                    					
+                    <configuration>
+                        						
+                        <destFile>${sonar.jacoco.reportPath}</destFile>
+                        					
+                    </configuration>
+                    				
+                </plugin>
+                			
+            </plugins>
+            		
+        </pluginManagement>
+        		
+        <plugins>
+            			
+            <plugin>
+                				
+                <groupId>org.apache.commons</groupId>
+                				
+                <artifactId>commons-build-plugin</artifactId>
+                				
+                <version>1.5</version>
+                			
+            </plugin>
+            			
+            <plugin>
+                				
+                <groupId>org.apache.maven.plugins</groupId>
+                				
+                <artifactId>maven-source-plugin</artifactId>
+                				
+                <version>3.0.1</version>
+                				
+                <executions>
+                    					
+                    <execution>
+                        						
+                        <id>attach-sources</id>
+                        						
+                        <goals>
+                            							
+                            <goal>jar-no-fork</goal>
+                            						
+                        </goals>
+                        					
+                    </execution>
+                    				
+                </executions>
+                			
+            </plugin>
+            			
+            <plugin>
+                				
+                <groupId>org.apache.felix</groupId>
+                				
+                <artifactId>maven-bundle-plugin</artifactId>
+                				
+                <extensions>true</extensions>
+                				
+                <configuration>
+                    					
+                    <archive>
+                        						
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                        					
+                    </archive>
+                    					
+                    <instructions>
+                        						
+                        <_nouses>true</_nouses>
+                        						
+                        <_noee>true</_noee>
+                        						
+                        <_removeheaders>JAVA_1_5_HOME,JAVA_1_6_HOME,JAVA_1_7_HOME,JAVA_1_8_HOME</_removeheaders>
+                        						
+                        <_include>META-INF/MANIFEST.MF</_include>
+                        						
+                        <Built-By>.Talend SA.</Built-By>
+                        						
+                        <Import-Package/>
+                        						
+                        <Private-Package/>
+                        						
+                        <Include-Resource>{maven-resources},CHANGELOG.md,LICENSE.txt</Include-Resource>
+                        					
+                    </instructions>
+                    				
+                </configuration>
+                			
+            </plugin>
+            			
+            <plugin>
+                				
+                <groupId>org.jacoco</groupId>
+                				
+                <artifactId>jacoco-maven-plugin</artifactId>
+                			
+            </plugin>
+            			
+            <plugin>
+                				
+                <groupId>net.revelc.code.formatter</groupId>
+                				
+                <artifactId>formatter-maven-plugin</artifactId>
+                				
+                <version>2.0.1</version>
+                				
+                <configuration>
+                    					
+                    <configFile>talend_java_eclipse_formatter.xml</configFile>
+                    					
+                    <lineEnding>LF</lineEnding>
+                    					
+                    <encoding>UTF-8</encoding>
+                    				
+                </configuration>
+                				
+                <dependencies>
+                    					
+                    <dependency>
+                        						
+                        <groupId>org.talend.tools</groupId>
+                        						
+                        <artifactId>java-formatter</artifactId>
+                        						
+                        <version>0.2.0</version>
+                        					
+                    </dependency>
+                    				
+                </dependencies>
+                			
+            </plugin>
+            		
+        </plugins>
+        	
+    </build>
+    	
+    <profiles>
+        		
+        <profile>
+            			
+            <id>default</id>
+            			
+            <activation>
+                				
+                <activeByDefault>true</activeByDefault>
+                				
+                <property>
+                    					
+                    <name>!format</name>
+                    				
+                </property>
+                			
+            </activation>
+            			
+            <build>
+                				
+                <plugins>
+                    					
+                    <plugin>
+                        						
+                        <groupId>net.revelc.code.formatter</groupId>
+                        						
+                        <artifactId>formatter-maven-plugin</artifactId>
+                        						
+                        <executions>
+                            							
+                            <execution>
+                                								
+                                <goals>
+                                    									
+                                    <goal>validate</goal>
+                                    								
+                                </goals>
+                                							
+                            </execution>
+                            						
+                        </executions>
+                        					
+                    </plugin>
+                    				
+                </plugins>
+                			
+            </build>
+            		
+        </profile>
+        		
+        <profile>
+            			
+            <id>format</id>
+            			
+            <activation>
+                				
+                <property>
+                    					
+                    <name>format</name>
+                    				
+                </property>
+                			
+            </activation>
+            			
+            <build>
+                				
+                <plugins>
+                    					
+                    <plugin>
+                        						
+                        <groupId>net.revelc.code.formatter</groupId>
+                        						
+                        <artifactId>formatter-maven-plugin</artifactId>
+                        						
+                        <executions>
+                            							
+                            <execution>
+                                								
+                                <goals>
+                                    									
+                                    <goal>format</goal>
+                                    								
+                                </goals>
+                                							
+                            </execution>
+                            						
+                        </executions>
+                        					
+                    </plugin>
+                    				
+                </plugins>
+                			
+            </build>
+            		
+        </profile>
+        	
+    </profiles>
+    	
+    <pluginRepositories>
+        		
+        <pluginRepository>
+            			
+            <id>talend-opensource-snapshot</id>
+            			
+            <name>talend-opensource-snapshot</name>
+            			
+            <url>https://artifacts-oss.talend.com/nexus/content/repositories/TalendOpenSourceSnapshot/</url>
+            		
+        </pluginRepository>
+        		
+        <pluginRepository>
+            			
+            <id>talend-opensource-release</id>
+            			
+            <name>talend-opensource-release</name>
+            			
+            <url>https://artifacts-oss.talend.com/nexus/content/repositories/TalendOpenSourceRelease/</url>
+            		
+        </pluginRepository>
+        		
+        <pluginRepository>
+            			
+            <id>public-maven</id>
+            			
+            <url>https://artifacts-zl.talend.com/nexus/content/groups/public/</url>
+            		
+        </pluginRepository>
+        	
+    </pluginRepositories>
+    
 </project>
