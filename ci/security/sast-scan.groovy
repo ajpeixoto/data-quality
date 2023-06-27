@@ -15,12 +15,12 @@ pipeline {
     }
     
     triggers {
-         cron(BRANCH_NAME == 'master' ? '0 13 * * 0' : '')
+         cron(BRANCH_NAME == 'maintenance/9.1' ? '0 14 * * 0' : '')
     }
 
     options {
-        // Only keep the 10 most recent builds for master branch, 2 for the other branches
-        buildDiscarder(logRotator(artifactNumToKeepStr: '5', numToKeepStr: env.BRANCH_NAME == 'master' ? '10' : '2'))
+        // Only keep the 10 most recent builds for master branch, 5 for the other branches
+        buildDiscarder(logRotator(artifactNumToKeepStr: '5', numToKeepStr: env.BRANCH_NAME == 'master' ? '10' : '5'))
         disableConcurrentBuilds()
         ansiColor('xterm')
         timeout(time: 1, unit: 'HOURS')
