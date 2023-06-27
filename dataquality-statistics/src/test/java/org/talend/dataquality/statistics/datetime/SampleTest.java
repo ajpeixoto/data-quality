@@ -18,10 +18,9 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -130,8 +129,10 @@ public class SampleTest {
                 String[] sampleLine = line.trim().split("\t");
                 String sample = sampleLine[0];
 
-                setFinalStatic(SystemDateTimePatternManager.class.getDeclaredField("dateTimeFormatterCache"),
-                        new HashMap<String, DateTimeFormatter>());
+                Method clearMethod =
+                        SystemDateTimePatternManager.class.getDeclaredMethod("clearDateTimeFormatterCache", null);
+                clearMethod.setAccessible(true);
+                clearMethod.invoke(null);
 
                 assertTrue(sample + " is expected to be a valid date but actually not.",
                         SystemDateTimePatternManager.isDate(sample));

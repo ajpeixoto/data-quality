@@ -1,5 +1,17 @@
 package org.talend.dataquality.statistics.quality;
 
+import static org.talend.dataquality.common.util.AvroUtils.copySchema;
+import static org.talend.dataquality.common.util.AvroUtils.createRecordSemanticSchema;
+import static org.talend.dataquality.common.util.AvroUtils.itemId;
+import static org.talend.dataquality.statistics.datetime.SystemDateTimePatternManager.isDate;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Stream;
+
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
@@ -11,24 +23,16 @@ import org.talend.dataquality.statistics.type.DataTypeEnum;
 import org.talend.dataquality.statistics.type.SortedList;
 import org.talend.dataquality.statistics.type.TypeInferenceUtils;
 
-import java.util.*;
-import java.util.stream.Stream;
-
-import static org.talend.dataquality.common.util.AvroUtils.copySchema;
-import static org.talend.dataquality.common.util.AvroUtils.createRecordSemanticSchema;
-import static org.talend.dataquality.common.util.AvroUtils.itemId;
-import static org.talend.dataquality.statistics.datetime.SystemDateTimePatternManager.isDate;
-
 /**
  * Data type quality analyzer for Avro records.
  *
  * How to use it:
  * <ul>
- *     <li>create a new instance</li>
- *     <li>initialize the instance with a schema containing the data type (see {@link #init(Schema)})</li>
- *     <li>analyze records (see {@link #analyze(Stream<IndexedRecord>)}) as many times as needed: it returns a list of
- *         records with the result of the analysis</li>
- *     <li>finally, get the global result (see {@link #getResult()})</li>
+ * <li>create a new instance</li>
+ * <li>initialize the instance with a schema containing the data type (see {@link #init(Schema)})</li>
+ * <li>analyze records (see {@link #analyze(Stream<IndexedRecord>)}) as many times as needed: it returns a list of
+ * records with the result of the analysis</li>
+ * <li>finally, get the global result (see {@link #getResult()})</li>
  * </ul>
  */
 public class AvroDataTypeQualityAnalyzer extends AvroQualityAnalyzer {
@@ -110,16 +114,16 @@ public class AvroDataTypeQualityAnalyzer extends AvroQualityAnalyzer {
             return new GenericData.Array(resultSchema, resultArray);
 
         case MAP:
-            final Map<String, Object> itemMap = (Map) item;
+            final Map<Object, Object> itemMap = (Map) item;
             final Map<String, Object> resultMap = new HashMap<>();
-            for (Map.Entry<String, Object> itemValue : itemMap.entrySet()) {
-                resultMap.put(itemValue.getKey(), analyzeItem(itemId, itemValue.getValue(), itemSchema.getValueType(),
-                        resultSchema.getValueType(), semanticSchema.getValueType()));
+            for (Map.Entry<Object, Object> itemValue : itemMap.entrySet()) {
+                resultMap.put(itemValue.getKey().toString(), analyzeItem(itemId, itemValue.getValue(),
+                        itemSchema.getValueType(), resultSchema.getValueType(), semanticSchema.getValueType()));
             }
             return resultMap;
 
         case UNION:
-            //TODO: doit-on faire la différence entre les différents types pour une union ? => ICI NON
+            // TODO: doit-on faire la différence entre les différents types pour une union ? => ICI NON
             final int typeIdx = new GenericData().resolveUnion(itemSchema, item);
             final List<Schema> unionSchemas = itemSchema.getTypes();
             final Schema realItemSchema = unionSchemas.get(typeIdx);

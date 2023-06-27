@@ -24,8 +24,20 @@ import java.time.format.ResolverStyle;
 import java.time.format.TextStyle;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalQueries;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.Set;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -82,7 +94,8 @@ public class SystemDateTimePatternManager {
     /**
      * give for each patterns, the list of word groups to check.
      * The word groups available are MONTHS, SHORT_MONTHS, WEEKDAYS, SHORT_WEEKDAYS, AM_PM and ERAS
-     * For example the pattern "EEEE, MMMM d, yyyy h:mm:ss a z" is associated to the list ["MONTHS"; "WEEKDAYS"; "AM_PM"]
+     * For example the pattern "EEEE, MMMM d, yyyy h:mm:ss a z" is associated to the list ["MONTHS"; "WEEKDAYS";
+     * "AM_PM"]
      *
      */
     private static final Map<String, List<String>> PATTERN_TO_WORD_GROUPS = new HashMap<>();
@@ -145,7 +158,8 @@ public class SystemDateTimePatternManager {
                 .collect(Collectors.toSet());
         buildWordsToLocales(ERAS, japaneseEraSet, Locale.JAPANESE);
 
-        // Note: the era.getDisplayName() method only works for JapaneseChronology above, but does not work for the other non-ISO
+        // Note: the era.getDisplayName() method only works for JapaneseChronology above, but does not work for the
+        // other non-ISO
         // chronologies below, as it always return AD or BC in English. We need to hard code these eras here.
 
         // load ERAs in Minguo chronology
@@ -540,7 +554,8 @@ public class SystemDateTimePatternManager {
                     if (CollectionUtils.isEmpty(locales))
                         locales.addAll(tmpLocales);
                     else
-                        locales.retainAll(tmpLocales); // we do the intersection between the sets "locales" and "tmpLocales"
+                        locales.retainAll(tmpLocales); // we do the intersection between the sets "locales" and
+                    // "tmpLocales"
                     break; // we don't have to iterate anymore
                 }
             }
@@ -567,5 +582,9 @@ public class SystemDateTimePatternManager {
 
     private static Optional<DateTimeFormatter> findDateTimeFormatter(String value, String pattern) {
         return findDateTimeFormatter(value, pattern, Locale.getDefault());
+    }
+
+    private static void clearDateTimeFormatterCache() {
+        dateTimeFormatterCache.clear();
     }
 }

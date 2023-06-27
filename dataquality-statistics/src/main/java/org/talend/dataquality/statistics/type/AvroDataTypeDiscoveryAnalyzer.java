@@ -164,11 +164,11 @@ public class AvroDataTypeDiscoveryAnalyzer implements AvroAnalyzer {
             return new GenericData.Array(resultSchema, resultArray);
 
         case MAP:
-            final Map<String, Object> itemMap = (Map) item;
+            final Map<Object, Object> itemMap = (Map) item;
             final Map<String, Object> resultMap = new HashMap<>();
-            for (Map.Entry<String, Object> itemValue : itemMap.entrySet()) {
-                resultMap.put(itemValue.getKey(), analyzeItem(itemId, itemValue.getValue(), itemSchema.getValueType(),
-                        resultSchema.getValueType(), fieldSemanticSchema.getValueType()));
+            for (Map.Entry<Object, Object> itemValue : itemMap.entrySet()) {
+                resultMap.put(itemValue.getKey().toString(), analyzeItem(itemId, itemValue.getValue(),
+                        itemSchema.getValueType(), resultSchema.getValueType(), fieldSemanticSchema.getValueType()));
             }
             return resultMap;
 

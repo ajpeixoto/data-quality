@@ -4,8 +4,8 @@ spec:
   imagePullSecrets:
     - name: talend-registry
   containers:
-    - name: talend-jdk8-builder-base
-      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk8-builder-base:2.3.0-20200824113419
+    - name: talend-builder-base
+      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk17-builder-base:3.1.9-20230228074507
       tty: true
       command:
         - cat
@@ -13,7 +13,7 @@ spec:
         - name: m2
           mountPath: /root/.m2/repository
     - name: talend-tsbi-springboot-builder
-      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk11-svc-springboot-builder:3.0.0-2.6-20220719061045
+      image: artifactory.datapwn.com/tlnd-docker-dev/talend/common/tsbi/jdk17-svc-springboot-builder:3.1.9-2.6-20230228074507
       command:
         - cat
       tty: true

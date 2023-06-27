@@ -49,7 +49,7 @@ pipeline {
                 expression { return params.m2Clear }
             }
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     sh '''#! /bin/bash
                         rm -rf ${m2PathToClear}
                     '''
@@ -64,7 +64,7 @@ pipeline {
          */
         stage('Build & Test') {
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     configFileProvider([configFile(fileId: 'maven-settings-nexus-zl', variable: 'MAVEN_SETTINGS')]) {
                         sh 'java -version'
                         sh 'mvn --version'
@@ -115,7 +115,7 @@ pipeline {
         stage('Publishing artifact') {
             when { expression { return env.BRANCH_NAME == 'master' || env.BRANCH_NAME =~ 'maintenance.*' } }
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     configFileProvider([configFile(fileId: 'maven-settings-nexus-zl', variable: 'MAVEN_SETTINGS')]) {
                         echo "Deploy DQ Libs SE jar on Nexus"
                         sh 'mvn deploy -DskipTests -B -s $MAVEN_SETTINGS'

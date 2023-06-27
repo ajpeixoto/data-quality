@@ -55,7 +55,7 @@ pipeline {
          */
         stage('Prepare ReleaseVersionBumper') {
             steps {
-                container("talend-jdk8-builder-base") {
+                container("talend-builder-base") {
                     sh """#! /bin/sh
                         set -e
                         echo target_dq_lib_version=${target_dq_lib_version}
@@ -75,7 +75,7 @@ pipeline {
          */
         stage('Update Lib Version') {
             steps {
-                container("talend-jdk8-builder-base") {
+                container("talend-builder-base") {
                     sh """#! /bin/sh
                         set -e
                         set +x
@@ -94,7 +94,7 @@ pipeline {
          */
         stage('Perform Pull Request') {
             steps {
-                container("talend-jdk8-builder-base") {
+                container("talend-builder-base") {
                     withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GIT_LOGIN', passwordVariable: 'GIT_TOKEN')]) {
                         sh """#! /bin/sh
                         set +x

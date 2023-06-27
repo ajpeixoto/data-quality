@@ -94,7 +94,9 @@ public class SystemDateTimePatternManagerTest {
     @Test
     public void datesWithThaiBuddhistChronology() {
         assertTrue(SystemDateTimePatternManager.isDate("1345-02-28 พ.ศ.")); //$NON-NLS-1$
-        assertTrue(SystemDateTimePatternManager.isDate("1345-02-28 ปีก่อนคริสต์กาลที่")); //$NON-NLS-1$
+        // on the jdk 17 sun.text.resources.ext.FormatData_th use BC instandof ปีก่อนคริสต์กาลที่
+        // assertTrue(SystemDateTimePatternManager.isDate("1345-02-28 ปีก่อนคริสต์กาลที่")); //$NON-NLS-1$
+        assertTrue(SystemDateTimePatternManager.isDate("1345-02-28 BC")); //$NON-NLS-1$
     }
 
     @Test

@@ -28,16 +28,18 @@ public class DuplicateCharEraser {
 
     /**
      *
-     * This constructor is used to initialize removeRepeatCharPattern and remove WhiteSpace chars like as " ","\t","\r","\n","\f".
+     * This constructor is used to initialize removeRepeatCharPattern and remove WhiteSpace chars like as "
+     * ","\t","\r","\n","\f".
      */
     public DuplicateCharEraser() {
-        removeRepeatCharPattern = Pattern.compile("([\\s\\u0085\\p{Z}]|\r\n)" + "\\1+"); //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
+        removeRepeatCharPattern = Pattern.compile("([\\s\\u0085\\u180e\\p{Z}]|\r\n)" + "\\1+"); //$NON-NLS-1$//$NON-NLS-2$
     }
 
     /**
      * 
      * This constructor is used to remove a given repeated String {@link #removeRepeatedChar(String)} .
-     * initialize removeRepeatCharPattern,add the Escape "\\" for non-word character like as "{","[","(","^,"+" and so on.
+     * initialize removeRepeatCharPattern,add the Escape "\\" for non-word character like as "{","[","(","^,"+" and so
+     * on.
      * 
      * @param repeatChar the string to be removed when it appears consecutively several times.
      */

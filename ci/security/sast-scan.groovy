@@ -36,7 +36,7 @@ pipeline {
 
         stage('Prepare artifacts') {
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     configFileProvider([configFile(fileId: 'maven-settings-nexus-zl', variable: 'MAVEN_SETTINGS')]) {
                         sh 'java -version'
                         sh 'mvn --version'
@@ -48,7 +48,7 @@ pipeline {
 
         stage('Veracode-Upload-and-Scan') {
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     withCredentials([veracodeCredentials]) {
                         veracode applicationName: "$VERACODE_APP_NAME",
                             canFailJob: true,

@@ -96,6 +96,7 @@ public class CombinedQueryTest {
 
     @After
     public void cleanup() throws Exception {
+        System.gc();
         FileUtils.deleteDirectory(new File(INDEX_PATH));
     }
 

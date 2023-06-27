@@ -232,7 +232,7 @@ Mon, 22 Mar 1999 05:06:07 +0100	EEE, d MMM yyyy HH:mm:ss Z	en_US	RFC1123_WITH_DA
 22-3-99 5:06	d-M-yy H:mm	nl	SHORT	true
 22-03-1999 5:06	dd-MM-yyyy H:mm	pt	SHORT	true
 22.03.99 5:06	dd.MM.yy H:mm	ru	SHORT	true
-99-03-22 5.06.PD	yy-MM-dd h.mm.a	sq	SHORT	true
+99-03-22 5.06.e paradites	yy-MM-dd h.mm.a	sq	SHORT	true
 22.3.99. 05.06	d.M.yy. HH.mm	sr	SHORT	true
 05:06 22/03/1999	HH:mm dd/MM/yyyy	vi	SHORT	true
 22.3.1999 5.06.07	d.M.yyyy H.mm.ss	be	MEDIUM	true
@@ -247,8 +247,8 @@ Mon, 22 Mar 1999 05:06:07 +0100	EEE, d MMM yyyy HH:mm:ss Z	en_US	RFC1123_WITH_DA
 1999.22.3 05:06:07	yyyy.d.M HH:mm:ss	lv	MEDIUM	true
 22.3.1999 05:06:	d.M.yyyy HH:mm:	mk	MEDIUM	true
 22.03.1999 5:06:07	dd.MM.yyyy H:mm:ss	ru	MEDIUM	true
-1999-03-22 5:06:07.PD	yyyy-MM-dd h:mm:ss.a	sq	MEDIUM	true
+1999-03-22 5:06:07.e paradites	yyyy-MM-dd h:mm:ss.a	sq	MEDIUM	true
 22.03.1999. 05.06.07	dd.MM.yyyy. HH.mm.ss	sr	MEDIUM	true
 05:06:07 22-03-1999	HH:mm:ss dd-MM-yyyy	vi	MEDIUM	true
-1999-03-22 5.06.07.PD CET	yyyy-MM-dd h.mm.ss.a z	sq	LONG	true
+1999-03-22 5.06.07.e paradites CET	yyyy-MM-dd h.mm.ss.a z	sq	LONG	true
 22.03.1999. 05.06.07 CET	dd.MM.yyyy. HH.mm.ss z	sr	LONG	true

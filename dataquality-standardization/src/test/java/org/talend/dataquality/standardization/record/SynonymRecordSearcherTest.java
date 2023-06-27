@@ -48,15 +48,19 @@ public class SynonymRecordSearcherTest {
                                                                                                        // match
             , { { "11", "12" }, { "21", "22" }, { "31", "32" } } // several //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
                                                                  // matches
-            , { {}, { "21", "22" }, { "31", "32" } } // first search does //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+            , { {}, { "21", "22" }, { "31", "32" } } // first //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                                                     // search does
                                                      // not match anything
-            , { { "11", "12" }, {}, { "31", "32" } } // second search does //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+            , { { "11", "12" }, {}, { "31", "32" } } // second //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                                                     // search does
                                                      // not match anything
-            , { { "11", "12" }, { "21", "22" }, {} } // last search does //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+            , { { "11", "12" }, { "21", "22" }, {} } // last //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                                                     // search does
                                                      // not match anything
             , { { "11", "12" }, {}, {} } // 2 searches did not match //$NON-NLS-1$ //$NON-NLS-2$
             , { {}, {}, {} } // nothing matched at all
-            , { { "11", "11" }, { "21", "21" } } // matched are duplicate //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+            , { { "11", "11" }, { "21", "21" } } // matched are //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                                                 // duplicate
     };
 
     private static final boolean showInConsole = false;
@@ -65,6 +69,7 @@ public class SynonymRecordSearcherTest {
 
     @After
     public void cleanUp() throws IOException {
+        System.gc();
         FileUtils.deleteDirectory(new File(INDEX_PATH));
     }
 

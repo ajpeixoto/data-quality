@@ -50,7 +50,8 @@ public class SynonymIndexBuilderTest {
     // private SynonymIndexBuilder builder;
 
     @After
-    public void cleanUp() throws IOException {
+    public void cleanUp() throws IOException, InterruptedException {
+        System.gc();
         FileUtils.deleteDirectory(new File(INDEX_PATH));
     }
 

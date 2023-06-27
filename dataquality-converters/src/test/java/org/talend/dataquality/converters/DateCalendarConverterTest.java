@@ -34,6 +34,7 @@ import java.util.Locale;
 
 import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -147,6 +148,11 @@ public class DateCalendarConverterTest {
             return false;
         }
         return true;
+    }
+
+    @BeforeClass
+    public static void init() {
+        Locale.setDefault(new Locale("en", "US")); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     @Test

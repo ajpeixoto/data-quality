@@ -17,9 +17,11 @@ import org.talend.dataquality.statistics.type.DataTypeEnum;
  * <b>This class enables the detection of patterns in texts that are encoded in Unicode.</b>
  * <p>
  * Here are the main patterns recognized and when they are used :
- * <li>[char] : A char is defined as a single alphabetic character (except ideograms) between non alphabetic characters.</li>
+ * <li>[char] : A char is defined as a single alphabetic character (except ideograms) between non alphabetic
+ * characters.</li>
  * <li>[word] : A word is defined as a string of alphabetic characters.</li>
- * <li>[Ideogram] : One of the 80 thousands CJK Unified CJK Ideographs, as defined in the Unicode. For more information about
+ * <li>[Ideogram] : One of the 80 thousands CJK Unified CJK Ideographs, as defined in the Unicode. For more information
+ * about
  * ideograms and how Java handles it, see {@link Character#isIdeographic(int)}</li>
  * <li>[IdeogramSeq] : A sequence of ideograms.</li>
  * <li>[digit] : A digit is one of the Hindu-Arabic numerals : 0,1,2,3,4,5,6,7,8,9.</li>
@@ -29,7 +31,8 @@ import org.talend.dataquality.statistics.type.DataTypeEnum;
  * <br>
  * Two different configurations can be chosen : withCase and noCase.
  * <br>
- * As their name indicates, they are used to specify whether the character's case is important. According to the cases, specific
+ * As their name indicates, they are used to specify whether the character's case is important. According to the cases,
+ * specific
  * patterns will be used.
  * <br>
  * A more detailed presentation of these configurations is described in the following.
@@ -47,7 +50,8 @@ import org.talend.dataquality.statistics.type.DataTypeEnum;
  * <li>[char] : A small letter comprised between non alphabetic characters and ideographs.</li>
  *
  * <br>
- * Because of these patterns, in some cases a single character string can be replaced by several types of [word] patterns.
+ * Because of these patterns, in some cases a single character string can be replaced by several types of [word]
+ * patterns.
  * </p>
  * <p>
  * Some examples :
@@ -85,10 +89,20 @@ public abstract class WordPatternRecognizer extends AbstractPatternRecognizer {
 
     private static final Set<Integer> REMOVED_IDEOGRAMS = new HashSet<>();
 
-    // Some codepoints are recognized as p{Han} but not as Character.isIdeographic, hence we add them here to be iso-functional
+    // Some codepoints are recognized as p{Han} but not as Character.isIdeographic, hence we add them here to be
+    // iso-functional
     // https://www.unicode.org/charts/PDF/U2E80.pdf
     // https://www.unicode.org/charts/PDF/U2F00.pdf
     // https://www.unicode.org/charts/PDF/U3000.pdf
+
+    // from JDK 11 some codepoints recognized as Character.isIdeographic but not as p{Han},hence we remove them here
+    // https://www.unicode.org/charts/PDF/U17000.pdf
+    // https://www.unicode.org/charts/PDF/U18800.pdf
+    // https://www.unicode.org/charts/PDF/U1B170.pdf
+
+    // from JDK 17 some codepoints recognized as Character.isIdeographic but not as p{Han},hence we remove them here
+    // https://www.unicode.org/charts/PDF/U16FE0.pdf
+    // https://www.unicode.org/charts/PDF/U18D00.pdf
     static {
         for (int i = 11904; i <= 11929; i++)
             ADDITIONAL_IDEOGRAMS.add(i);
@@ -98,8 +112,21 @@ public abstract class WordPatternRecognizer extends AbstractPatternRecognizer {
             ADDITIONAL_IDEOGRAMS.add(i);
         ADDITIONAL_IDEOGRAMS.add(12293);
         ADDITIONAL_IDEOGRAMS.add(12347);
-
         REMOVED_IDEOGRAMS.add(12294);
+        // from JDK 11
+        for (int i = 94208; i <= 100343; i++)
+            REMOVED_IDEOGRAMS.add(i);
+        for (int i = 100352; i <= 101589; i++)
+            REMOVED_IDEOGRAMS.add(i);
+        for (int i = 110960; i <= 111355; i++)
+            REMOVED_IDEOGRAMS.add(i);
+
+        // from JDK 17
+        REMOVED_IDEOGRAMS.add(94180);
+        for (int i = 101632; i <= 101640; i++)
+            REMOVED_IDEOGRAMS.add(i);
+        ADDITIONAL_IDEOGRAMS.add(94192);
+        ADDITIONAL_IDEOGRAMS.add(94193);
     }
 
     /**
@@ -151,7 +178,8 @@ public abstract class WordPatternRecognizer extends AbstractPatternRecognizer {
                 seqLength = exploreNextPattern(pe, ca, runningPos);
                 if (seqLength > 0) {
                     patternSeq.append(pe.getPattern(seqLength));
-                    runningPos += seqLength; // Iterate through all possible patterns until all the string has been explored
+                    runningPos += seqLength; // Iterate through all possible patterns until all the string has been
+                                             // explored
                 }
             }
             if (loopStart == runningPos) {

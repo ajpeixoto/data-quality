@@ -3,12 +3,12 @@
 	<parent>
 		<groupId>org.talend.dataquality</groupId>
 		<artifactId>dataquality-parent</artifactId>
-		<version>9.1.14-SNAPSHOT</version>
+		<version>17.0.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>dataquality-libraries</artifactId>
-	<version>9.1.14-SNAPSHOT</version>
+	<version>17.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>dataquality-libraries</name>
 	<description>Parent pom aggregating other library projects, devops tools</description>
@@ -18,11 +18,11 @@
 
 		<slf4j.version>1.7.34</slf4j.version>
 		<log4j.version>2.17.1</log4j.version>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<assertj.version>3.0.0</assertj.version>
 		<junit.version>4.13.2</junit.version>
 		<mockito.version>2.23.4</mockito.version>
-		<powermock.version>2.0.2</powermock.version>
+		<powermock.version>2.0.9</powermock.version>
 		<re2j.version>1.2</re2j.version>
 		<commons-text.version>1.10.0</commons-text.version>
 		<org.talend.daikon.version>7.0.5</org.talend.daikon.version>
@@ -210,7 +210,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.6</version>
+					<version>3.2.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -225,7 +225,7 @@
 				<plugin>
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
-					<version>2.5.3</version>
+					<version>3.5.0</version>
 					<inherited>true</inherited>
 				</plugin>
 				<plugin>
@@ -236,12 +236,13 @@
 						<systemPropertyVariables>
 							<java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
 						</systemPropertyVariables>
+						<argLine>@{argLine} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.5</version>
+					<version>0.8.7</version>
 					<executions>
 						<execution>
 							<goals>

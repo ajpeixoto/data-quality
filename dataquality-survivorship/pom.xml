@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.talend.dataquality</groupId>
 		<artifactId>dataquality-libraries</artifactId>
-		<version>9.1.14-SNAPSHOT</version>
+		<version>17.0.1-SNAPSHOT</version>
 		<relativePath>../dataquality-libraries</relativePath>
 	</parent>
 	<artifactId>dataquality-survivorship</artifactId>
@@ -182,6 +182,11 @@
     		<artifactId>rhino</artifactId>
     		<version>${rhino.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.openjdk.nashorn</groupId>
+		    <artifactId>nashorn-core</artifactId>
+		    <version>15.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -209,6 +214,21 @@
                                     <groupId>org.mozilla</groupId>
                                     <artifactId>rhino</artifactId>
                                     <version>${rhino.version}</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.openjdk.nashorn</groupId>
+                                    <artifactId>nashorn-core</artifactId>
+                                    <version>15.4</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.ow2.asm</groupId>
+                                    <artifactId>asm</artifactId>
+                                    <version>9.3</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.ow2.asm</groupId>
+                                    <artifactId>asm-util</artifactId>
+                                    <version>9.3</version>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>

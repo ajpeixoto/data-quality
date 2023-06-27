@@ -70,6 +70,7 @@ public class SynonymIndexSearcherTest {
 
     @After
     public void cleanUp() throws IOException {
+        System.gc();
         FileUtils.deleteDirectory(new File(INDEX_PATH));
     }
 

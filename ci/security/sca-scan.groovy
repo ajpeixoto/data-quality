@@ -26,7 +26,7 @@ pipeline {
     stages {
         stage('Build project') {
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     configFileProvider([configFile(fileId: 'maven-settings-nexus-zl', variable: 'MAVEN_SETTINGS')]) {
                         sh 'java -version'
                         sh 'mvn --version'
@@ -38,7 +38,7 @@ pipeline {
 
         stage('Scan 3rd parties vulnerabilities') {
             steps {
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     withCredentials([string(credentialsId: 'veracode-token', variable: 'SRCCLR_API_TOKEN')]) {
                         sh """#!/bin/bash
 
@@ -54,7 +54,7 @@ pipeline {
         stage('Process scan result') {
             steps {
                 echo 'Build simple report & send slack notification'
-                container('talend-jdk8-builder-base') {
+                container('talend-builder-base') {
                     script {
                         readFile "${scanResultPath}"
                         SCAN_RESULT_URL = sh(
