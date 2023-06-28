@@ -92,7 +92,7 @@ public class ReleaseVersionBumper {
 
     private ReleaseVersionBumper() throws TransformerConfigurationException, TransformerFactoryConfigurationError {
         xTransformer = TransformerFactory.newInstance().newTransformer();
-        xTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        xTransformer.setOutputProperty(OutputKeys.INDENT, "no");
         xTransformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
     }
 
