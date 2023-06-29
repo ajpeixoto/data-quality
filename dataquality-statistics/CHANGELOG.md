@@ -18,8 +18,6 @@ N/A
 ### Security
 N/A
 
-## [17.0.1] - 2023-06-27
-
 ## [9.1.13] - 2023-05-11
 ### Security
 - fix([TDQ-21093](https://jira.talendforge.org/browse/TDQ-21093)): Unify jackson-databind version 2.13.4.2

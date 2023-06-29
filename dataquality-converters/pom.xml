@@ -1,152 +1,54 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-        	
-    
-    <modelVersion>4.0.0</modelVersion>
-        	
-    
-    <parent>
-                		
-        
-        <groupId>org.talend.dataquality</groupId>
-                		
-        
-        <artifactId>dataquality-libraries</artifactId>
-                		
-        
-        <version>17.0.2-SNAPSHOT</version>
-                		
-        
-        <relativePath>../dataquality-libraries</relativePath>
-                	
-    
-    </parent>
-        	
-    
-    <artifactId>dataquality-converters</artifactId>
-        	
-    
-    <packaging>bundle</packaging>
-        	
-    
-    <name>dataquality-converters</name>
-        	
-    
-    <description>API for all types of convert functions</description>
-        	
-    
-    <dependencies>
-                        
-        
-        <dependency>
-                                    
-            
-            <groupId>commons-lang</groupId>
-                                    
-            
-            <artifactId>commons-lang</artifactId>
-                                
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>junit</groupId>
-                        			
-            
-            <artifactId>junit</artifactId>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- logging stuff -->
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.apache.logging.log4j</groupId>
-                        			
-            
-            <artifactId>log4j-core</artifactId>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.slf4j</groupId>
-                        			
-            
-            <artifactId>slf4j-api</artifactId>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.slf4j</groupId>
-                        			
-            
-            <artifactId>slf4j-reload4j</artifactId>
-                        		
-        
-        </dependency>
-                	
-    
-    </dependencies>
-        	
-    
-    <build>
-                		
-        
-        <plugins>
-                        			
-            
-            <plugin>
-                                				
-                
-                <groupId>org.apache.felix</groupId>
-                                				
-                
-                <artifactId>maven-bundle-plugin</artifactId>
-                                				
-                
-                <extensions>true</extensions>
-                                				
-                
-                <configuration>
-                                        					
-                    
-                    <instructions>
-                                                						
-                        
-                        <Include-Resource>{maven-resources},CHANGELOG.md</Include-Resource>
-                                                					
-                    
-                    </instructions>
-                                        				
-                
-                </configuration>
-                                			
-            
-            </plugin>
-                        		
-        
-        </plugins>
-                	
-    
-    </build>
-        
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.talend.dataquality</groupId>
+		<artifactId>dataquality-libraries</artifactId>
+		<version>17.0.2-SNAPSHOT</version>
+		<relativePath>../dataquality-libraries</relativePath>
+	</parent>
+	<artifactId>dataquality-converters</artifactId>
+	<packaging>bundle</packaging>
+	<name>dataquality-converters</name>
+	<description>API for all types of convert functions</description>
 
+	<dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- logging stuff -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-reload4j</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Include-Resource>{maven-resources},CHANGELOG.md</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>

@@ -1,734 +1,251 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-        	
-    
-    <modelVersion>4.0.0</modelVersion>
-        	
-    
-    <parent>
-                		
-        
-        <groupId>org.talend.dataquality</groupId>
-                		
-        
-        <artifactId>dataquality-libraries</artifactId>
-                		
-        
-        <version>17.0.2-SNAPSHOT</version>
-                		
-        
-        <relativePath>../dataquality-libraries</relativePath>
-                	
-    
-    </parent>
-        	
-    
-    <artifactId>dataquality-survivorship</artifactId>
-        	
-    
-    <packaging>bundle</packaging>
-        	
-    
-    <name>dataquality-survivorship</name>
-        	
-    
-    <description>Data Survivorship runtime API based on Drools</description>
-        	
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.talend.dataquality</groupId>
+		<artifactId>dataquality-libraries</artifactId>
+		<version>17.0.2-SNAPSHOT</version>
+		<relativePath>../dataquality-libraries</relativePath>
+	</parent>
+	<artifactId>dataquality-survivorship</artifactId>
+	<packaging>bundle</packaging>
+	<name>dataquality-survivorship</name>
+	<description>Data Survivorship runtime API based on Drools</description>
 	
-    
-    <properties>
-                	    
-        
-        <drools.version>7.73.0.Final</drools.version>
-                	    
-        
-        <rhino.version>1.7.13</rhino.version>
-                	    
-        
-        <delight-rhino-sandbox.version>0.0.15</delight-rhino-sandbox.version>
-                    
-    
+	<properties>
+	    <drools.version>7.73.0.Final</drools.version>
+	    <rhino.version>1.7.13</rhino.version>
+	    <delight-rhino-sandbox.version>0.0.15</delight-rhino-sandbox.version>
     </properties>
-            
-	
     
-    <dependencies>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.drools</groupId>
-                        			
-            
-            <artifactId>drools-core</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        		
-        
-        </dependency>
-                		   
-        
-        <dependency>
-                                    
-            
+	<dependencies>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+		   <dependency>
             <groupId>org.kie</groupId>
-                                    
-            
             <artifactId>kie-api</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                
-        
         </dependency>
-                        
-        
         <dependency>
-                                    
-            
             <groupId>org.kie</groupId>
-                                    
-            
             <artifactId>kie-internal</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                
-        
         </dependency>
-                        
-        
         <dependency>
-                        			
-            
-            <groupId>org.jbpm</groupId>
-                        			
-            
-            <artifactId>jbpm-bpmn2</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <exclusions>
-                                				
-                
-                <exclusion>
-                                        					
-                    
-                    <groupId>com.thoughtworks.xstream</groupId>
-                                        					
-                    
-                    <artifactId>xstream</artifactId>
-                                        				
-                
-                </exclusion>
-                                			
-            
-            </exclusions>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- drools for junit -->
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.drools</groupId>
-                        			
-            
-            <artifactId>drools-compiler</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <exclusions>
-                                				
-                
-                <exclusion>
-                                        					
-                    
-                    <groupId>com.thoughtworks.xstream</groupId>
-                                        					
-                    
-                    <artifactId>xstream</artifactId>
-                                        				
-                
-                </exclusion>
-                                			
-            
-            </exclusions>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.drools</groupId>
-                                    
-            
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-bpmn2</artifactId>
+			<version>${drools.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.thoughtworks.xstream</groupId>
+					<artifactId>xstream</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- drools for junit -->
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${drools.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.thoughtworks.xstream</groupId>
+					<artifactId>xstream</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
             <artifactId>drools-core-dynamic</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                    
-            
             <scope>test</scope>
-                        		
-        
-        </dependency>
-                        
-        
+		</dependency>
         <dependency>
-                        			
-            
-            <groupId>org.drools</groupId>
-                        			
-            
-            <artifactId>drools-mvel</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
+			<groupId>org.drools</groupId>
+			<artifactId>drools-mvel</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core-reflective</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
+     
         <dependency>
-                        			
-            
-            <groupId>org.drools</groupId>
-                        			
-            
-            <artifactId>drools-core-reflective</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                     
-        
-        
-        <dependency>
-                                    
-            
             <groupId>org.kie</groupId>
-                                    
-            
             <artifactId>kie-dmn-feel</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                    
-            
             <scope>test</scope>
-                                
-        
         </dependency>
-                        
-        
         <dependency>
-                                    
-            
             <groupId>org.kie.soup</groupId>
-                                    
-            
             <artifactId>kie-soup-maven-support</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                    
-            
             <scope>test</scope>
-                                
-        
         </dependency>
-                        
-        
         <dependency>
-                        			
-            
-            <groupId>org.kie.soup</groupId>
-                        			
-            
-            <artifactId>kie-soup-project-datamodel-commons</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                        
-        
+			<groupId>org.kie.soup</groupId>
+			<artifactId>kie-soup-project-datamodel-commons</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+		</dependency>
         <dependency>
-                                    
-            
             <groupId>org.kie</groupId>
-                                    
-            
             <artifactId>kie-memory-compiler</artifactId>
-                                    
-            
             <version>${drools.version}</version>
-                                    
-            
             <scope>test</scope>
-                                
-        
         </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.jbpm</groupId>
-                        			
-            
-            <artifactId>jbpm-flow-builder</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        	    
-        
-        </dependency>
-                	    
-        
-        <dependency>
-                        			
-            
-            <groupId>org.jbpm</groupId>
-                        			
-            
-            <artifactId>jbpm-flow</artifactId>
-                        			
-            
-            <version>${drools.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        	    
-        
-        </dependency>
-                	    
-        
-        <dependency>
-                        			
-            
-            <groupId>org.mvel</groupId>
-                        			
-            
-            <artifactId>mvel2</artifactId>
-                        			
-            
-            <version>2.4.14.Final</version>
-                        			
-            
-            <scope>test</scope>
-                        	    
-        
-        </dependency>
-                	     
-        
-        <dependency>
-                                    
-            
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow-builder</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+	    </dependency>
+	    <dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow</artifactId>
+			<version>${drools.version}</version>
+			<scope>test</scope>
+	    </dependency>
+	    <dependency>
+			<groupId>org.mvel</groupId>
+			<artifactId>mvel2</artifactId>
+			<version>2.4.14.Final</version>
+			<scope>test</scope>
+	    </dependency>
+	     <dependency>
             <groupId>org.antlr</groupId>
-                                    
-            
             <artifactId>antlr-runtime</artifactId>
-                                    
-            
             <version>3.5.3</version>
-                                    
-            
             <scope>test</scope>
-                                
-        
         </dependency>
-                        
-        
         <dependency>
-                        			
-            
-            <groupId>com.fasterxml.jackson.core</groupId>
-                        			
-            
-            <artifactId>jackson-core</artifactId>
-                        			
-            
-            <version>${jackson.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>com.fasterxml.jackson.core</groupId>
-                        			
-            
-            <artifactId>jackson-annotations</artifactId>
-                        			
-            
-            <version>${jackson.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>com.fasterxml.jackson.core</groupId>
-                        			
-            
-            <artifactId>jackson-databind</artifactId>
-                        			
-            
-            <version>${jackson-databind.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-                        			
-            
-            <artifactId>jackson-datatype-jsr310</artifactId>
-                        			
-            
-            <version>${jackson.version}</version>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- End drools for junit -->
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>junit</groupId>
-                        			
-            
-            <artifactId>junit</artifactId>
-                        			
-            
-            <scope>test</scope>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- logging stuff -->
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.apache.logging.log4j</groupId>
-                        			
-            
-            <artifactId>log4j-core</artifactId>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.slf4j</groupId>
-                        			
-            
-            <artifactId>slf4j-api</artifactId>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        			
-            
-            <groupId>org.slf4j</groupId>
-                        			
-            
-            <artifactId>slf4j-reload4j</artifactId>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- https://mvnrepository.com/artifact/org.javadelight/delight-rhino-sandbox -->
-                		
-        
-        <dependency>
-                            		
-            
-            <groupId>org.javadelight</groupId>
-                            		
-            
-            <artifactId>delight-rhino-sandbox</artifactId>
-                            		
-            
-            <version>${delight-rhino-sandbox.version}</version>
-                        		
-        
-        </dependency>
-                		
-        
-        <!-- https://mvnrepository.com/artifact/org.mozilla/rhino -->
-                		
-        
-        <dependency>
-                            		
-            
-            <groupId>org.mozilla</groupId>
-                            		
-            
-            <artifactId>rhino</artifactId>
-                            		
-            
-            <version>${rhino.version}</version>
-                        		
-        
-        </dependency>
-                		
-        
-        <dependency>
-                        		    
-            
-            <groupId>org.openjdk.nashorn</groupId>
-                        		    
-            
-            <artifactId>nashorn-core</artifactId>
-                        		    
-            
-            <version>15.4</version>
-                        		
-        
-        </dependency>
-                	
-    
-    </dependencies>
-        	
-    
-    <build>
-                		
-        
-        <plugins>
-                        		    
-            
-            <plugin>
-                                                
-                
-                <groupId>org.apache.maven.plugins</groupId>
-                                                
-                
-                <artifactId>maven-dependency-plugin</artifactId>
-                                                
-                
-                <version>2.8</version>
-                                                
-                
-                <executions>
-                                                            
-                    
-                    <execution>
-                                                                        
-                        
-                        <id>copy-maven-repository</id>
-                                                                        
-                        
-                        <phase>generate-sources</phase>
-                                                                        
-                        
-                        <goals>
-                                                                                    
-                            
-                            <goal>copy</goal>
-                                                                                
-                        
-                        </goals>
-                                                                        
-                        
-                        <configuration>
-                                                                                    
-                            
-                            <outputDirectory>${project.basedir}/lib</outputDirectory>
-                                                                                    
-                            
-                            <artifactItems>
-                                                                                                
-                                
-                                <artifactItem>
-                                                                                                            
-                                    
-                                    <groupId>org.javadelight</groupId>
-                                                                                                            
-                                    
-                                    <artifactId>delight-rhino-sandbox</artifactId>
-                                                                                                            
-                                    
-                                    <version>${delight-rhino-sandbox.version}</version>
-                                                                                                        
-                                
-                                </artifactItem>
-                                                                                                
-                                
-                                <artifactItem>
-                                                                                                            
-                                    
-                                    <groupId>org.mozilla</groupId>
-                                                                                                            
-                                    
-                                    <artifactId>rhino</artifactId>
-                                                                                                            
-                                    
-                                    <version>${rhino.version}</version>
-                                                                                                        
-                                
-                                </artifactItem>
-                                                                                                 
-                                
-                                <artifactItem>
-                                                                                                            
-                                    
-                                    <groupId>org.openjdk.nashorn</groupId>
-                                                                                                            
-                                    
-                                    <artifactId>nashorn-core</artifactId>
-                                                                                                            
-                                    
-                                    <version>15.4</version>
-                                                                                                        
-                                
-                                </artifactItem>
-                                                                                                 
-                                
-                                <artifactItem>
-                                                                                                            
-                                    
-                                    <groupId>org.ow2.asm</groupId>
-                                                                                                            
-                                    
-                                    <artifactId>asm</artifactId>
-                                                                                                            
-                                    
-                                    <version>9.3</version>
-                                                                                                        
-                                
-                                </artifactItem>
-                                                                                                 
-                                
-                                <artifactItem>
-                                                                                                            
-                                    
-                                    <groupId>org.ow2.asm</groupId>
-                                                                                                            
-                                    
-                                    <artifactId>asm-util</artifactId>
-                                                                                                            
-                                    
-                                    <version>9.3</version>
-                                                                                                        
-                                
-                                </artifactItem>
-                                                                                            
-                            
-                            </artifactItems>
-                                                                                
-                        
-                        </configuration>
-                                                                    
-                    
-                    </execution>
-                                                        
-                
-                </executions>
-                                            
-            
-            </plugin>
-                        			
-            
-            <plugin>
-                                				
-                
-                <groupId>org.apache.felix</groupId>
-                                				
-                
-                <artifactId>maven-bundle-plugin</artifactId>
-                                				
-                
-                <extensions>true</extensions>
-                                				
-                
-                <configuration>
-                                        					
-                    
-                    <instructions>
-                                                						
-                        
-                        <Import-Package/>
-                                                						
-                        
-                        <Include-Resource>{maven-resources},lib=lib</Include-Resource>
-                                                					
-                    
-                    </instructions>
-                                        				
-                
-                </configuration>
-                                			
-            
-            </plugin>
-                        		
-        
-        </plugins>
-                	
-    
-    </build>
-        
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- End drools for junit -->
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- logging stuff -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-reload4j</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.javadelight/delight-rhino-sandbox -->
+		<dependency>
+    		<groupId>org.javadelight</groupId>
+    		<artifactId>delight-rhino-sandbox</artifactId>
+    		<version>${delight-rhino-sandbox.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mozilla/rhino -->
+		<dependency>
+    		<groupId>org.mozilla</groupId>
+    		<artifactId>rhino</artifactId>
+    		<version>${rhino.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.openjdk.nashorn</groupId>
+		    <artifactId>nashorn-core</artifactId>
+		    <version>15.4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+		    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>copy-maven-repository</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/lib</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.javadelight</groupId>
+                                    <artifactId>delight-rhino-sandbox</artifactId>
+                                    <version>${delight-rhino-sandbox.version}</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.mozilla</groupId>
+                                    <artifactId>rhino</artifactId>
+                                    <version>${rhino.version}</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.openjdk.nashorn</groupId>
+                                    <artifactId>nashorn-core</artifactId>
+                                    <version>15.4</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.ow2.asm</groupId>
+                                    <artifactId>asm</artifactId>
+                                    <version>9.3</version>
+                                </artifactItem>
+                                 <artifactItem>
+                                    <groupId>org.ow2.asm</groupId>
+                                    <artifactId>asm-util</artifactId>
+                                    <version>9.3</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Import-Package/>
+						<Include-Resource>{maven-resources},lib=lib</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>
