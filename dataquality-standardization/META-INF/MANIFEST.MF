@@ -5,7 +5,6 @@ Bundle-SymbolicName: org.talend.dataquality.standardization
 Bundle-Version: 9.1.14.SNAPSHOT
 Bundle-Vendor: .Talend SA.
 Require-Bundle: org.slf4j.api,
- org.eclipse.m2e.maven.runtime.slf4j.simple,
  org.talend.libraries.apache.lucene8,
  org.apache.commons.io,
  org.apache.commons.lang,

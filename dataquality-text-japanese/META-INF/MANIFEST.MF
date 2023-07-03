@@ -12,6 +12,5 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;resolution:=optional,
  org.slf4j.api,
  org.talend.dataquality.converters,
- org.eclipse.m2e.maven.runtime.slf4j.simple
 Bundle-ClassPath: .,
  lib/kuromoji-core-0.9.0.jar
