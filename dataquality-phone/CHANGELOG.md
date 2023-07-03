@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- fix(TDQ-21242): Build DQ libs with Java 17
 ### Removed
 N/A
 ### Deprecated
