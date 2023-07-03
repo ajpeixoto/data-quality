@@ -14,7 +14,7 @@ pipeline {
     }
 
     triggers {
-        cron(BRANCH_NAME == "maintenance/9.1" ? "0 14 * * 0" : "")
+        cron(BRANCH_NAME == "maintenance/9.1" ? "0 16 * * 0" : "")
     }
 
     options {
