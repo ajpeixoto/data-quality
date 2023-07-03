@@ -15,7 +15,7 @@ pipeline {
     }
     
     triggers {
-         cron(BRANCH_NAME == 'master' ? '0 13 * * 0' : '')
+         cron(BRANCH_NAME == 'master' ? '0 14 * * 0' : '')
     }
 
     options {
