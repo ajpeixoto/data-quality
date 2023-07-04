@@ -6,6 +6,7 @@ Bundle-Version: 9.1.14.SNAPSHOT
 Bundle-Vendor: .Talend SA.
 Bundle-ClassPath: .
 Require-Bundle: org.slf4j.api,
+ org.eclipse.m2e.maven.runtime.slf4j.simple,
  org.junit;resolution:=optional,
  org.apache.commons.lang
 Bundle-ActivationPolicy: lazy

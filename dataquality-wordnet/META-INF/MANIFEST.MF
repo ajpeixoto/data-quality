@@ -8,6 +8,7 @@ Export-Package: org.talend.dataquality.wordnet
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;resolution:=optional,
  org.slf4j.api,
+ org.eclipse.m2e.maven.runtime.slf4j.simple
 Bundle-ClassPath: .,
  lib/jwi-2.2.3.jar
 Eclipse-BundleShape: dir

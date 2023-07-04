@@ -13,6 +13,7 @@ Require-Bundle: org.slf4j.api,
  org.talend.dataquality.common,
  org.talend.dataquality.semantic;resolution:=optional,
  org.junit;resolution:=optional,
+ org.eclipse.m2e.maven.runtime.slf4j.simple;resolution:=optional,
  org.talend.testutils;resolution:=optional
 Bundle-ClassPath: .
 Import-Package: com.clearspring.analytics.stream,
