@@ -14,7 +14,7 @@ N/A
 ### Deprecated
 N/A
 ### Fixed
-N/A
+- fix(TDQ-21269): Remove dependency 'm2e'
 ### Security
 N/A
 
