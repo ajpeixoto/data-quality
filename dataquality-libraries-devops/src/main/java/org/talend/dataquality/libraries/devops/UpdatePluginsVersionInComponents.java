@@ -41,7 +41,7 @@ public class UpdatePluginsVersionInComponents {
 
     private static final String MAIN_PLUGINS_FOLDER = "/main/plugins"; //$NON-NLS-1$
 
-    private static final String TALEND_STUDIO_VERSION = "8.8.8"; //$NON-NLS-1$
+    private static final String TALEND_STUDIO_VERSION = "8.0.1"; //$NON-NLS-1$
 
     private static final String[] PROVIDERS = new String[] { "/org.talend.designer.components.tdqprovider" //$NON-NLS-1$
     };
@@ -70,7 +70,6 @@ public class UpdatePluginsVersionInComponents {
         DEP_VERSION_MAP.put("/org.talend.dataquality.reporting/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
         DEP_VERSION_MAP.put("/org.talend.metadata.managment/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
         DEP_VERSION_MAP.put("/org.talend.model/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
-        DEP_VERSION_MAP.put("/org.talend.utils/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
     }
 
     private UpdatePluginsVersionInComponents() {
