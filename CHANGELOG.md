@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.14] - 2023-07-12
+### Fixed
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-record-linkage]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-phone]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-standardization]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-statistics]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-wordnet]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-email]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-survivorship]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-converters]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-text-japanese]
+
 ## [9.1.13] - 2023-05-11
 ### Security
 - fix([TDQ-21093](https://jira.talendforge.org/browse/TDQ-21093)): Unify jackson-databind version 2.13.4.2 [dataquality-common]
