@@ -28,7 +28,7 @@ pipeline {
 
     environment {
         SLACK_CHANNEL = 'tdq_ci'
-        VERACODE_APP_NAME = 'data-quality'
+        VERACODE_APP_NAME = 'data-quality/maintenance/8.0'
         TIMESTAMP = sh(returnStdout: true, script: "date +%Y%m%d_%H%M%S").trim()
     }
 
@@ -52,7 +52,7 @@ pipeline {
                     withCredentials([veracodeCredentials]) {
                         veracode applicationName: "$VERACODE_APP_NAME",
                             canFailJob: true,
-                            createProfile: false,
+                            createProfile: true,
                             debug: true,
                             copyRemoteFiles: true,
                             fileNamePattern: '',
