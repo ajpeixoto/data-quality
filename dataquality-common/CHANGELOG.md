@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-21323): upgrade daikon to 7.1.16
 
 ## [9.1.14] - 2023-07-12
 
