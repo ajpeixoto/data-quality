@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.15] - 2023-08-01
+### Security
+- fix([TDQ-21323](https://jira.talendforge.org/browse/TDQ-21323)): upgrade daikon to 7.1.16 [dataquality-common]
+- fix([TDQ-21323](https://jira.talendforge.org/browse/TDQ-21323)): upgrade daikon to 7.1.16 [dataquality-statistics]
+
 ## [9.1.14] - 2023-07-12
 ### Fixed
 - fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-record-linkage]
