@@ -16,7 +16,7 @@ N/A
 ### Fixed
 - fix(TDQ-21269): Remove dependency 'm2e'
 ### Security
-N/A
+- fix(TDQ-21323): upgrade daikon to 7.1.16
 
 ## [17.0.2] - 2023-07-03
 ### Changed
