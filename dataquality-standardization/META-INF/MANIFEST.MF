@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Standardization
 Bundle-SymbolicName: org.talend.dataquality.standardization
-Bundle-Version: 9.1.16.SNAPSHOT
+Bundle-Version: 9.1.16
 Bundle-Vendor: .Talend SA.
 Require-Bundle: org.slf4j.api,
  org.talend.libraries.apache.lucene8,
