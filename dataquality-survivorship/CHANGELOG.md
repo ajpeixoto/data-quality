@@ -16,7 +16,7 @@ N/A
 ### Fixed
 - fix(TDQ-21269): Remove dependency 'm2e'
 ### Security
-N/A
+- fix(TDQ-21398): Upgrade jackson to 2.14.3
 
 ## [17.0.2] - 2023-07-03
 ### Changed
