@@ -16,7 +16,7 @@ N/A
 ### Fixed
 N/A
 ### Security
-N/A
+- fix(TDQ-21398): Upgrade jackson to 2.14.3
 
 ## [9.1.15] - 2023-08-01
 

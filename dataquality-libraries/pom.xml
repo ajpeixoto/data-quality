@@ -27,9 +27,8 @@
 		<commons-text.version>1.10.0</commons-text.version>
 		<org.talend.daikon.version>7.1.16</org.talend.daikon.version>
 		<commons-codec.version>1.14</commons-codec.version>
-        <!--adapt for the version using in studio-->
-		<jackson.version>2.13.4</jackson.version>
-		<jackson-databind.version>2.13.4.2</jackson-databind.version>
+		<!--adapt for the version using in studio-->
+		<jackson.version>2.14.3</jackson.version>
 
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
@@ -105,7 +104,7 @@
 			<dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson-databind.version}</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
