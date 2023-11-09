@@ -70,6 +70,7 @@ public class UpdatePluginsVersionInComponents {
         DEP_VERSION_MAP.put("/org.talend.dataquality.reporting/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
         DEP_VERSION_MAP.put("/org.talend.metadata.managment/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
         DEP_VERSION_MAP.put("/org.talend.model/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
+        DEP_VERSION_MAP.put("/org.talend.sdk.component.studio-integration/", TALEND_STUDIO_VERSION); //$NON-NLS-1$
     }
 
     private UpdatePluginsVersionInComponents() {
