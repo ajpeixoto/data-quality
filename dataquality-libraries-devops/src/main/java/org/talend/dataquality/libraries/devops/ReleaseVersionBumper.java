@@ -66,7 +66,7 @@ import org.xml.sax.SAXException;
  */
 public class ReleaseVersionBumper {
 
-    private static final String TARGET_VERSION = "9.2.1";
+    private static final String TARGET_VERSION = "9.2.1-SNAPSHOT";
 
     private static final String TARGET_DAIKON_VERSION = "7.1.16";
 
