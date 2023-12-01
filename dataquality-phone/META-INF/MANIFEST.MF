@@ -7,6 +7,6 @@ Bundle-Vendor: .Talend SA.
 Bundle-ClassPath: .
 Require-Bundle: org.talend.libraries.google.libphonumber,
  org.apache.commons.lang3,
- org.slf4j.api,
  org.junit;resolution:=optional
 Export-Package: org.talend.dataquality.standardization.phone
+Import-Package: org.slf4j

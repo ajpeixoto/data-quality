@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 N/A
 ### Changed
-N/A
+- fix(TDQ-21649) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j
 ### Removed
 N/A
 ### Deprecated

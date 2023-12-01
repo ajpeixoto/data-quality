@@ -5,8 +5,7 @@ Bundle-SymbolicName: org.talend.dataquality.statistics;singleton:=true
 Bundle-Version: 9.1.17.SNAPSHOT
 Bundle-Vendor: .Talend SA.
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.slf4j.api,
- org.apache.commons.collections,
+Require-Bundle: org.apache.commons.collections,
  org.apache.commons.io,
  org.apache.commons.lang,
  org.apache.commons.lang3,
@@ -21,6 +20,7 @@ Import-Package: com.clearspring.analytics.stream,
  com.clearspring.analytics.stream.quantile,
  org.apache.commons.math3.stat.descriptive;version="3.3.0",
  org.apache.commons.math3.stat.descriptive.rank;version="3.3.0",
+ org.slf4j,
  org.talend.daikon.number,
  org.talend.daikon.pattern.character,
  org.talend.daikon.pattern.word

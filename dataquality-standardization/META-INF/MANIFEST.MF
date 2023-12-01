@@ -4,8 +4,7 @@ Bundle-Name: Standardization
 Bundle-SymbolicName: org.talend.dataquality.standardization
 Bundle-Version: 9.1.17.SNAPSHOT
 Bundle-Vendor: .Talend SA.
-Require-Bundle: org.slf4j.api,
- org.talend.libraries.apache.lucene8,
+Require-Bundle: org.talend.libraries.apache.lucene8,
  org.apache.commons.io,
  org.apache.commons.lang,
  org.junit;resolution:=optional,
@@ -18,3 +17,4 @@ Export-Package: org.talend.dataquality.standardization.action,
  org.talend.dataquality.standardization.index,
  org.talend.dataquality.standardization.query,
  org.talend.dataquality.standardization.record
+Import-Package: org.slf4j

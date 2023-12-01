@@ -10,7 +10,7 @@ Export-Package: org.talend.dataquality.jp.common,
  org.talend.dataquality.jp.transliteration
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;resolution:=optional,
- org.slf4j.api,
  org.talend.dataquality.converters
 Bundle-ClassPath: .,
  lib/kuromoji-core-0.9.0.jar
+Import-Package: org.slf4j

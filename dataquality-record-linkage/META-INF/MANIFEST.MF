@@ -3,8 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Linkage Plug-in
 Bundle-SymbolicName: org.talend.dataquality.record.linkage
 Bundle-Version: 9.1.17.SNAPSHOT
-Require-Bundle: org.slf4j.api,
- org.apache.commons.codec,
+Require-Bundle: org.apache.commons.codec,
  org.apache.commons.collections,
  org.apache.commons.io,
  org.junit;resolution:=optional,
@@ -30,4 +29,5 @@ Export-Package: org.talend.dataquality.matchmerge,
  org.talend.utils.classloader,
  org.talend.windowkey
 Bundle-ClassPath: .
-Import-Package: org.apache.commons.lang
+Import-Package: org.apache.commons.lang,
+ org.slf4j
