@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.2.1] - 2023-12-01
+### Changed
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-record-linkage]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-phone]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-standardization]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-statistics]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-wordnet]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-email]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-survivorship]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-converters]
+- fix([TDQ-21649](https://jira.talendforge.org/browse/TDQ-21649)) : change Require-Bundle:org.slf4j.api to Import-Package:org.slf4j [dataquality-text-japanese]
+
 ## [9.1.16] - 2023-09-22
 ### Security
 - fix([TDQ-21398](https://jira.talendforge.org/browse/TDQ-21398)): Upgrade jackson to 2.14.3 [dataquality-common]
