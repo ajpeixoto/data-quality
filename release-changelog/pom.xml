@@ -46,8 +46,8 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>talend-opensource-snapshot</id>
-            <name>talend-opensource-snapshot</name>
+            <id>talend_open_snapshots</id>
+            <name>talend_open_snapshots</name>
             <url>${talend_snapshots}</url>
             <releases>
                 <enabled>false</enabled>
@@ -57,8 +57,8 @@
             </snapshots>
         </pluginRepository>
         <pluginRepository>
-            <id>talend-opensource-release</id>
-            <name>talend-opensource-release</name>
+            <id>talend_open</id>
+            <name>talend_open</name>
             <url>${talend_releases}</url>
             <releases>
                 <enabled>true</enabled>
