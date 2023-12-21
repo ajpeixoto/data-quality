@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [17.0.3] - 2023-12-20
+### Fixed
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-record-linkage]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-phone]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-standardization]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-statistics]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-wordnet]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-email]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-survivorship]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-converters]
+- fix([TDQ-21269](https://jira.talendforge.org/browse/TDQ-21269)): Remove dependency 'm2e' [dataquality-text-japanese]
+### Security
+- fix([TDQ-21323](https://jira.talendforge.org/browse/TDQ-21323)): upgrade daikon to 7.1.16 [dataquality-common]
+- fix([TDQ-21398](https://jira.talendforge.org/browse/TDQ-21398)): Upgrade jackson to 2.14.3 [dataquality-common]
+- fix([TDQ-21323](https://jira.talendforge.org/browse/TDQ-21323)): upgrade daikon to 7.1.16 [dataquality-statistics]
+- fix([TDQ-21398](https://jira.talendforge.org/browse/TDQ-21398)): Upgrade jackson to 2.14.3 [dataquality-statistics]
+- fix([TDQ-21398](https://jira.talendforge.org/browse/TDQ-21398)): Upgrade jackson to 2.14.3 [dataquality-survivorship]
+
 ## [17.0.2] - 2023-07-03
 ### Changed
 - fix([TDQ-21242](https://jira.talendforge.org/browse/TDQ-21242)): Build DQ libs with Java 17 [dataquality-common]
